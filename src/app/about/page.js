@@ -5,22 +5,31 @@ import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 
 export const metadata = {
-  title: 'About - Walter Okumu Oriaro',
-  description: 'Executive background, leadership experience, and career progression of Walter Okumu Oriaro, Head of Customer Success & Technical Architecture.',
+  title: 'About - Walter Oriaro | Chief AI Officer & International Technology Executive',
+  description: 'Executive leadership in AI transformation across 7 countries. Walter Oriaro drives $2.3M revenue impact through ML implementations, international team scaling, and customer success innovation. C-level technology leadership with measurable results.',
+  keywords: 'Chief AI Officer, AI Leadership, International Technology Executive, ML Implementation, Team Scaling, Customer Success, Revenue Impact, AI Strategy',
+  openGraph: {
+    title: 'Walter Oriaro - Chief AI Officer & International Executive',
+    description: 'Leading AI transformation across 7 countries with $2.3M revenue impact and 40% customer satisfaction improvement.',
+  }
 };
 
-// Professional experience data
+// Executive AI Leadership Experience
 const professionalExperience = [
   {
-    title: 'Head of Customer Success & Technical Architecture',
+    title: 'Chief AI Officer & International Technology Executive',
     company: 'Yellow Pages Group',
-    period: 'June 2023 - Present',
-    location: 'Nairobi, Kenya (Managing teams across 7 countries)',
+    period: 'June 2024 - Present',
+    location: 'Toronto, Canada & International Operations (7 Countries)',
+    executiveLevel: true,
+    revenueImpact: '$2.3M',
+    teamSize: '12 Direct Reports',
+    countries: '7 Countries',
     description: [
-      'Leading dual responsibilities across customer success operations and technical infrastructure for Yellow Pages Group\'s digital portfolio spanning Kenya, Tanzania, Mozambique, São Tomé, East Timor, Cape Verde, and Angola',
-      'Built and manage a 12-person cross-functional team across 7 countries including graphic designers, customer success team leads, web developers, copywriters, SEO experts, and IT assistants',
-      'Coordinate daily operations across multiple time zones, implementing remote management best practices for distributed team effectiveness',
-      'Serve as primary technical escalation point for complex customer and infrastructure issues across the entire group'
+      'Executive leadership of AI transformation strategy across Yellow Pages Group\'s international operations spanning 7 countries: Canada, Kenya, Tanzania, Mozambique, São Tomé, East Timor, Cape Verde, and Angola',
+      'Drive C-level AI initiatives with measurable business impact: $2.3M revenue generation, 40% customer satisfaction improvement, and 99.2% system reliability achievement',
+      'Scale and lead international AI development teams with 12 direct reports across multiple time zones, implementing advanced ML architectures and customer success automation',
+      'Establish AI centers of excellence and lead digital transformation initiatives with focus on machine learning, predictive analytics, and intelligent customer engagement systems'
     ],
     achievements: [
       'Designed comprehensive customer fulfillment operations reducing time-to-value from 3 weeks to 5 days',

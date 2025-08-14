@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static Export Configuration
+  // GitHub Flow Deployment Configuration
   output: 'export',
   trailingSlash: true,
+  distDir: 'dist', // GitHub Pages compatible
 
   // Image Optimization for Static Export
   images: {

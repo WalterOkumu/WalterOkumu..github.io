@@ -5,8 +5,13 @@ import Badge from '@/components/ui/Badge';
 import { Users, Globe, Zap, ExternalLink, Calendar, MapPin } from 'lucide-react';
 
 export const metadata = {
-  title: 'Digital Portfolio - Walter Okumu Oriaro',
-  description: 'International digital portfolio spanning 7 countries - Yellow Pages business directories, tourism platforms, and custom client solutions.',
+  title: 'Executive Portfolio - Walter Oriaro | AI-Driven International Projects',
+  description: 'Chief AI Officer portfolio: $2.3M revenue impact across 7 countries through ML-driven Yellow Pages transformation, international team leadership, and AI-powered customer success platforms. C-level technology execution with measurable business outcomes.',
+  keywords: 'Chief AI Officer Projects, International Technology Leadership, ML Implementation, Revenue Impact, Team Scaling, AI Transformation',
+  openGraph: {
+    title: 'Walter Oriaro - Executive Project Portfolio | AI Leadership Results',
+    description: 'Leading $2.3M revenue-generating AI transformation across 7 countries with international team management.',
+  }
 };
 
 // Yellow Pages Group Portfolio

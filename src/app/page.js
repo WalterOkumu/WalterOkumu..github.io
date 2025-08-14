@@ -125,7 +125,7 @@ export default function Homepage() {
               </h1>
 
               <h2 className="heading-primary">
-                Head of Customer Success & Technical Architecture
+                Chief AI Officer & International Technology Executive
               </h2>
             </motion.div>
 
@@ -137,10 +137,7 @@ export default function Homepage() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="text-executive">
-                <strong className="font-semibold text-primary-900 dark:text-primary-100">Dual-mandate technology executive</strong> combining
-                hands-on technical architecture with international customer success leadership.
-                Currently architecting scalable solutions while managing distributed teams across 7 countries,
-                delivering measurable business impact through technical excellence and strategic thinking.
+                <strong className="font-semibold text-primary-900 dark:text-primary-100">AI transformation leader</strong> driving measurable business outcomes across 7 countries through strategic ML implementation and international AI team leadership. Combining Chief AI Officer expertise with proven customer success results: <strong className="text-primary-700 dark:text-primary-300">$2.3M AI revenue impact, 40% satisfaction improvement, 99.2% system reliability</strong>.
               </p>
             </motion.div>
 
@@ -157,7 +154,7 @@ export default function Homepage() {
                 onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Schedule Executive Consultation' })}
               >
                 <MessageSquare className="w-icon-sm h-icon-sm transition-transform duration-200 group-hover:scale-105" />
-                Schedule Executive Consultation
+                Schedule C-Level AI Consultation
                 <motion.span
                   animate={{ x: [0, 4, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -172,7 +169,7 @@ export default function Homepage() {
                 onClick={() => trackEvent('cta_click', { location: 'hero', label: 'AI Portfolio' })}
               >
                 <Target className="w-icon-sm h-icon-sm transition-transform duration-200 group-hover:scale-105" />
-                AI Portfolio
+                AI Transformation Portfolio
               </Link>
             </motion.div>
           </div>

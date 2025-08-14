@@ -1,45 +1,49 @@
-// Design System Tokens for Walter Okumu Executive Portfolio
+// Executive Design System Tokens for Walter Oriaro Executive Portfolio
+// Enhanced for C-Level Professional Presentation and International Standards
 export const designTokens = {
-  // Professional Color Palette
+  // Executive Professional Color Palette
   colors: {
-    // Primary - Executive Blue
+    // Primary - Executive Blue (C-Level Authority)
     primary: {
-      50: '#eff6ff',
-      100: '#dbeafe',
-      200: '#bfdbfe', 
-      300: '#93c5fd',
-      400: '#60a5fa',
-      500: '#3b82f6',
-      600: '#2563eb',
-      700: '#1d4ed8',
-      800: '#1e40af',
-      900: '#1e3a8a',
+      50: '#eff6ff',   // Ultra light - backgrounds
+      100: '#dbeafe',  // Light - hover states
+      200: '#bfdbfe',  // Soft - borders
+      300: '#93c5fd',  // Medium - secondary text
+      400: '#60a5fa',  // Active - interactive elements
+      500: '#3b82f6',  // Base - primary actions
+      600: '#2563eb',  // Strong - executive CTAs
+      700: '#1d4ed8',  // Deep - headings
+      800: '#1e40af',  // Darker - emphasis
+      900: '#1e3a8a',  // Deepest - high contrast
+      950: '#172554',  // Executive - premium elements
     },
-    // Secondary - Success Green
+    // Secondary - Executive Success (Achievement & Growth)
     secondary: {
-      50: '#f0fdf4',
-      100: '#dcfce7',
-      200: '#bbf7d0',
-      300: '#86efac',
-      400: '#4ade80',
-      500: '#22c55e',
-      600: '#16a34a',
-      700: '#15803d',
-      800: '#166534',
-      900: '#14532d',
+      50: '#f0fdf4',   // Lightest - success backgrounds
+      100: '#dcfce7',  // Light - success states
+      200: '#bbf7d0',  // Soft - success borders
+      300: '#86efac',  // Medium - success indicators
+      400: '#4ade80',  // Active - growth metrics
+      500: '#22c55e',  // Base - success actions
+      600: '#16a34a',  // Strong - achievement highlights
+      700: '#15803d',  // Deep - revenue/growth data
+      800: '#166534',  // Darker - performance emphasis
+      900: '#14532d',  // Deepest - executive achievements
+      950: '#052e16',  // Premium - leadership success
     },
-    // Accent - Professional Orange
+    // Accent - Executive Innovation (AI/Tech Leadership)
     accent: {
-      50: '#fff7ed',
-      100: '#ffedd5',
-      200: '#fed7aa',
-      300: '#fdba74',
-      400: '#fb923c',
-      500: '#f97316',
-      600: '#ea580c',
-      700: '#c2410c',
-      800: '#9a3412',
-      900: '#7c2d12',
+      50: '#fff7ed',   // Lightest - innovation backgrounds
+      100: '#ffedd5',  // Light - AI feature highlights
+      200: '#fed7aa',  // Soft - tech borders
+      300: '#fdba74',  // Medium - innovation indicators
+      400: '#fb923c',  // Active - AI transformation
+      500: '#f97316',  // Base - innovation CTAs
+      600: '#ea580c',  // Strong - AI leadership
+      700: '#c2410c',  // Deep - tech expertise
+      800: '#9a3412',  // Darker - innovation emphasis
+      900: '#7c2d12',  // Deepest - AI authority
+      950: '#431407',  // Premium - Chief AI Officer
     },
     // Neutral - Professional Grays
     neutral: {
@@ -278,6 +282,139 @@ export const componentTokens = {
     },
     headerHeight: '4rem',
     footerHeight: '6rem',
+  },
+
+  // Executive-specific component tokens
+  executive: {
+    // Executive cards and sections
+    card: {
+      executive: {
+        padding: '2rem 2.5rem',
+        borderRadius: '1rem',
+        shadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+        border: '1px solid rgb(59 130 246 / 0.1)',
+        background: 'linear-gradient(135deg, rgb(255 255 255 / 0.9) 0%, rgb(239 246 255 / 0.4) 100%)',
+        backdropFilter: 'blur(10px)',
+      },
+      metric: {
+        padding: '1.5rem',
+        borderRadius: '0.75rem',
+        shadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
+        background: 'linear-gradient(145deg, rgb(255 255 255) 0%, rgb(248 250 252) 100%)',
+        border: '1px solid rgb(226 232 240)',
+        hoverTransform: 'translateY(-2px)',
+      },
+    },
+
+    // Executive typography scales
+    typography: {
+      display: {
+        fontSize: '4rem',
+        lineHeight: '1.1',
+        fontWeight: '800',
+        letterSpacing: '-0.02em',
+      },
+      hero: {
+        fontSize: '3rem',
+        lineHeight: '1.1',
+        fontWeight: '700',
+        letterSpacing: '-0.01em',
+      },
+      leadership: {
+        fontSize: '1.25rem',
+        lineHeight: '1.6',
+        fontWeight: '500',
+        letterSpacing: '0.01em',
+      },
+      executive: {
+        fontSize: '1.125rem',
+        lineHeight: '1.7',
+        fontWeight: '400',
+        letterSpacing: '0.01em',
+      },
+    },
+
+    // Executive interaction states
+    interaction: {
+      magnetic: {
+        scale: '1.02',
+        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      glass: {
+        backdrop: 'blur(10px)',
+        background: 'rgb(255 255 255 / 0.1)',
+        border: '1px solid rgb(255 255 255 / 0.2)',
+      },
+      focusRing: {
+        outline: '2px solid rgb(59 130 246)',
+        outlineOffset: '2px',
+        transition: 'outline-offset 0.2s ease',
+      },
+    },
+
+    // Executive gradient definitions
+    gradients: {
+      primary: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+      success: 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)',
+      innovation: 'linear-gradient(135deg, #f97316 0%, #c2410c 100%)',
+      glass: 'linear-gradient(135deg, rgb(255 255 255 / 0.1) 0%, rgb(255 255 255 / 0.05) 100%)',
+      executive: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #172554 100%)',
+    },
+
+    // Executive spacing and sizing
+    spacing: {
+      section: {
+        mobile: '4rem 1rem',
+        tablet: '6rem 2rem',
+        desktop: '8rem 3rem',
+      },
+      component: '2rem',
+      leadership: '3rem',
+      executive: '4rem',
+    },
+
+    // Executive animation presets
+    animation: {
+      fadeIn: {
+        initial: { opacity: 0, y: 30 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] },
+      },
+      slideIn: {
+        initial: { opacity: 0, x: -30 },
+        animate: { opacity: 1, x: 0 },
+        transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
+      },
+      scaleIn: {
+        initial: { opacity: 0, scale: 0.95 },
+        animate: { opacity: 1, scale: 1 },
+        transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+      },
+      magnetic: {
+        whileHover: { scale: 1.02, y: -2 },
+        transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
+      },
+    },
+  },
+
+  // Professional branding elements
+  branding: {
+    logo: {
+      primary: '#1d4ed8',
+      secondary: '#16a34a',
+      mark: '#f97316',
+    },
+    signature: {
+      color: '#1e3a8a',
+      fontFamily: 'Inter',
+      fontWeight: '600',
+    },
+    tagline: {
+      color: '#525252',
+      fontFamily: 'Inter',
+      fontWeight: '400',
+      fontSize: '1rem',
+    },
   },
 };
 

@@ -4,20 +4,26 @@ import { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 import { trackCTAClick, trackExternalLink } from '@/lib/analytics';
 
-// Enhanced Button variant styles with perfect contrast ratios
+// Executive Button variant styles with enhanced C-Level presentation
 const buttonVariants = {
   variant: {
-    // Primary: Enhanced gradient with 7.8:1+ contrast ratio
-    primary: 'bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 focus:ring-primary-600 border-transparent shadow-lg shadow-primary-500/20',
+    // Executive Primary: Premium gradient with magnetic effects
+    primary: 'bg-gradient-executive text-white hover:shadow-xl hover:scale-[1.02] hover:-translate-y-0.5 focus:ring-primary-600 border-transparent transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
+    
+    // Executive CTA: Enhanced for C-Level calls-to-action
+    executive: 'bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white hover:from-primary-700 hover:via-primary-800 hover:to-primary-900 shadow-xl shadow-primary-500/30 hover:shadow-2xl hover:shadow-primary-600/40 transform-gpu hover:scale-[1.02] hover:-translate-y-1 focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 border-transparent',
 
-    // Secondary: Enhanced contrast with 8.1:1 ratio
-    secondary: 'bg-white text-primary-700 hover:bg-primary-50 hover:text-primary-800 focus:ring-primary-600 border-2 border-primary-300 hover:border-primary-400',
+    // Glass Secondary: Modern glass morphism effect
+    secondary: 'bg-white/10 backdrop-blur-sm text-primary-700 hover:bg-white/20 hover:text-primary-800 focus:ring-primary-600 border border-white/20 hover:border-white/30 shadow-lg transition-all duration-300',
+    
+    // Glass Effect: Premium glass morphism for executive interactions
+    glass: 'bg-white/10 backdrop-blur-md text-primary-900 hover:bg-white/20 hover:text-primary-800 focus:ring-primary-600 border border-white/20 hover:border-primary-300/50 shadow-lg hover:shadow-xl transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
 
-    // Outline: Enhanced contrast for better visibility
-    outline: 'bg-transparent text-primary-700 hover:bg-primary-50 hover:text-primary-800 focus:ring-primary-600 border-2 border-primary-400 hover:border-primary-500',
+    // Outline: Enhanced magnetic hover effects
+    outline: 'bg-transparent text-primary-700 hover:bg-primary-50 hover:text-primary-800 hover:shadow-lg hover:scale-[1.01] focus:ring-primary-600 border-2 border-primary-400 hover:border-primary-500 transition-all duration-300',
 
-    // Ghost: Enhanced contrast with neutral colors
-    ghost: 'bg-transparent text-neutral-800 hover:bg-neutral-100 hover:text-neutral-900 focus:ring-neutral-600 border-transparent',
+    // Ghost: Enhanced with subtle magnetic effects
+    ghost: 'bg-transparent text-neutral-800 hover:bg-neutral-100 hover:text-neutral-900 hover:scale-[1.01] focus:ring-neutral-600 border-transparent transition-all duration-300',
 
     // Link: Enhanced contrast for text links
     link: 'bg-transparent text-primary-700 hover:text-primary-800 focus:ring-primary-600 border-transparent underline-offset-4 hover:underline',

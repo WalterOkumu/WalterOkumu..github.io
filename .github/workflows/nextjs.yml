@@ -1,8 +1,8 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
+# Portfolio Excellence Initiative - Next.js CI/CD Pipeline
+# Comprehensive build, test, and deployment workflow for Walter Okumu Oriaro's executive portfolio
+# Implements GitHub Flow with performance, accessibility, and SEO validations
 #
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
-name: Deploy Next.js site to Pages
+name: Deploy Executive Portfolio to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -78,7 +78,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./dist
 
   # Deployment job
   deploy:
