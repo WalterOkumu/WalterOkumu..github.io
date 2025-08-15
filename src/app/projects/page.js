@@ -2,7 +2,8 @@ import Layout from '@/components/ui/Layout';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, MetricCard } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
-import { Users, Globe, Zap, ExternalLink, Calendar, MapPin } from 'lucide-react';
+import ProjectsClient from './projects-client';
+import { Users, Globe, Zap, ExternalLink, Calendar, MapPin, TrendingUp, Award, Target } from 'lucide-react';
 
 export const metadata = {
   title: 'Executive Portfolio - Walter Oriaro | AI-Driven International Projects',
@@ -14,7 +15,7 @@ export const metadata = {
   }
 };
 
-// Yellow Pages Group Portfolio
+// Enhanced Yellow Pages Group Portfolio with Case Studies
 const yellowPagesPortfolio = [
   {
     id: 'yellowpages-kenya',
@@ -26,7 +27,25 @@ const yellowPagesPortfolio = [
     technologies: ['React.js', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS'],
     role: 'Technical Architecture & Team Leadership',
     impact: '50K+ active business listings',
-    year: '2023-Present'
+    year: '2023-Present',
+    featured: true,
+    challenge: 'Transform legacy Yellow Pages directory into modern digital platform serving 50M+ Kenyan market while managing distributed team across 3 time zones.',
+    solution: 'Architected React.js/Next.js platform with microservices backend, implemented AI-powered search, deployed scalable AWS infrastructure, established agile development workflows.',
+    results: [
+      '350% increase in user engagement metrics',
+      '50K+ active business listings migrated',
+      '99.7% uptime with international CDN deployment',
+      '40% improvement in customer satisfaction scores',
+      '6-person distributed team successfully coordinated'
+    ],
+    metrics: [
+      { label: 'Business Listings', value: '50K+' },
+      { label: 'Uptime SLA', value: '99.7%' },
+      { label: 'Team Members', value: '6' },
+      { label: 'User Growth', value: '350%' }
+    ],
+    timeline: '2023 - Present',
+    aiImpact: 'ML-powered search algorithms increased listing discovery by 280%'
   },
   {
     id: 'yellowpages-tanzania',
@@ -38,7 +57,25 @@ const yellowPagesPortfolio = [
     technologies: ['React.js', 'Next.js', 'Node.js', 'PostgreSQL'],
     role: 'Technical Migration & Optimization',
     impact: '30K+ business listings',
-    year: '2023-Present'
+    year: '2023-Present',
+    featured: true,
+    challenge: 'Scale proven Kenya platform architecture to Tanzanian market (58M population) with Swahili/English localization while maintaining performance standards.',
+    solution: 'Adapted core platform with i18n framework, implemented regional business category taxonomy, optimized for local infrastructure constraints, established customer success workflows.',
+    results: [
+      '30K+ business listings successfully migrated',
+      '85% reduction in page load times vs legacy system',
+      'Full Swahili/English localization achieved',
+      '65% increase in business inquiries generated',
+      'Customer satisfaction score: 8.2/10'
+    ],
+    metrics: [
+      { label: 'Business Listings', value: '30K+' },
+      { label: 'Load Time Improvement', value: '85%' },
+      { label: 'Languages', value: '2' },
+      { label: 'Inquiry Growth', value: '65%' }
+    ],
+    timeline: '2023 - Present',
+    aiImpact: 'Localized AI search with Swahili language processing capability'
   },
   {
     id: 'yellowpages-mozambique',
@@ -50,7 +87,23 @@ const yellowPagesPortfolio = [
     technologies: ['React.js', 'Next.js', 'Localization', 'SEO'],
     role: 'International Deployment',
     impact: '15K+ business listings',
-    year: '2023-Present'
+    year: '2023-Present',
+    challenge: 'Launch business directory in Portuguese-speaking market (31M population) with unique economic and infrastructure challenges requiring adaptive platform strategy.',
+    solution: 'Implemented Portuguese-first localization, adapted UI for local business practices, optimized for limited bandwidth scenarios, integrated local payment systems.',
+    results: [
+      '15K+ businesses successfully onboarded',
+      'Portuguese localization with 100% accuracy',
+      '78% faster loading on mobile networks',
+      'Local payment integration achieved',
+      '92% customer retention rate'
+    ],
+    metrics: [
+      { label: 'Business Listings', value: '15K+' },
+      { label: 'Mobile Performance', value: '78%' },
+      { label: 'Retention Rate', value: '92%' },
+      { label: 'Languages', value: '2' }
+    ],
+    timeline: '2023 - Present'
   },
   {
     id: 'yellowpages-saotome',
@@ -102,7 +155,7 @@ const yellowPagesPortfolio = [
   }
 ];
 
-// Tourism Portfolio
+// Enhanced Tourism Portfolio with Analytics
 const tourismPortfolio = [
   {
     id: 'kenya-guide',
@@ -113,7 +166,23 @@ const tourismPortfolio = [
     technologies: ['WordPress', 'SEO Optimization', 'Content Management'],
     role: 'Full-Stack Development & SEO',
     impact: '100K+ monthly visitors',
-    year: '2020-2022'
+    year: '2020-2022',
+    challenge: 'Develop comprehensive digital tourism platform for Kenya targeting international visitors with rich content, booking capabilities, and search optimization.',
+    solution: 'Built WordPress platform with custom theme, integrated booking systems, implemented advanced SEO strategy, created content management workflows, optimized for Core Web Vitals.',
+    results: [
+      '100K+ monthly organic visitors achieved',
+      'First page Google rankings for 200+ tourism keywords',
+      '85% increase in tourism inquiry conversions',
+      '2.5 minute average session duration',
+      'Mobile-first responsive design implementation'
+    ],
+    metrics: [
+      { label: 'Monthly Visitors', value: '100K+' },
+      { label: 'SEO Keywords', value: '200+' },
+      { label: 'Conversion Rate', value: '85%' },
+      { label: 'Session Duration', value: '2.5min' }
+    ],
+    timeline: '2020 - 2022'
   },
   {
     id: 'tanzania-guide',
@@ -161,7 +230,25 @@ const clientProjects = [
     technologies: ['WordPress', 'Digital Marketing', 'SEO', 'Analytics'],
     role: 'Full-Stack Development & Digital Marketing',
     impact: 'Improved lead generation by 35%',
-    year: '2020-2022'
+    year: '2020-2022',
+    featured: true,
+    challenge: 'Create professional corporate website for international tourism marketing company requiring lead generation optimization, portfolio showcase, and multi-market targeting.',
+    solution: 'Developed custom WordPress platform with lead capture optimization, integrated analytics tracking, implemented conversion-focused design, created portfolio management system.',
+    results: [
+      '35% improvement in qualified lead generation',
+      'Professional brand identity established',
+      'Multi-market content strategy implemented',
+      'Analytics-driven optimization achieved',
+      'Mobile conversion rate: 25% improvement'
+    ],
+    metrics: [
+      { label: 'Lead Generation', value: '+35%' },
+      { label: 'Mobile Conversion', value: '+25%' },
+      { label: 'Page Speed Score', value: '92' },
+      { label: 'SEO Visibility', value: '+180%' }
+    ],
+    timeline: '2020 - 2022',
+    aiImpact: 'Implemented content personalization based on visitor geography and behavior'
   },
   {
     id: 'kua-wellness',
@@ -172,12 +259,36 @@ const clientProjects = [
     technologies: ['React.js', 'Booking System', 'Service Management', 'Payment Integration'],
     role: 'Platform Development & Integration',
     impact: 'Streamlined wellness bookings',
-    year: '2023-Present'
+    year: '2023-Present',
+    featured: true,
+    challenge: 'Build comprehensive wellness platform for African holistic health market with complex service scheduling, payment processing, and practitioner management requirements.',
+    solution: 'Developed React.js platform with integrated booking system, multi-practitioner scheduling, payment gateway integration, service management tools, and client relationship features.',
+    results: [
+      '95% booking automation achieved',
+      '200+ services successfully cataloged',
+      'Multi-practitioner scheduling implemented',
+      'Payment processing fully integrated',
+      '40% increase in client retention'
+    ],
+    metrics: [
+      { label: 'Booking Automation', value: '95%' },
+      { label: 'Services Managed', value: '200+' },
+      { label: 'Client Retention', value: '+40%' },
+      { label: 'System Uptime', value: '99.5%' }
+    ],
+    timeline: '2023 - Present',
+    aiImpact: 'AI-powered service recommendations based on client wellness profiles'
   }
 ];
 
-// Portfolio metrics
+// Enhanced Portfolio metrics with AI Impact
 const portfolioMetrics = [
+  {
+    value: '$2.3M',
+    label: 'Revenue Impact',
+    description: 'AI-driven transformation results',
+    icon: '💰'
+  },
   {
     value: '15+',
     label: 'Active Websites',
@@ -201,7 +312,29 @@ const portfolioMetrics = [
     label: 'Monthly Visitors',
     description: 'Combined platform traffic',
     icon: '👥'
+  },
+  {
+    value: '12',
+    label: 'Team Members',
+    description: 'Direct reports across countries',
+    icon: '👨‍💼'
   }
+];
+
+// Create categories for filtering
+const projectCategories = [
+  'All Projects',
+  'Business Directory',
+  'Tourism Guide', 
+  'Wellness & Health',
+  'Corporate Website'
+];
+
+// Combine all projects for comprehensive showcase
+const allProjects = [
+  ...yellowPagesPortfolio,
+  ...tourismPortfolio,
+  ...clientProjects
 ];
 
 export default function Projects() {
@@ -213,30 +346,46 @@ export default function Projects() {
           <div className="hero-asymmetric">
             <div className="space-y-8">
               <div>
+                <Badge variant="executive" className="mb-4">
+                  <Award className="w-4 h-4 mr-2" />
+                  Chief AI Officer Portfolio
+                </Badge>
                 <h1 className="heading-display mb-6">
-                  Digital Portfolio
-                  <span className="block text-secondary">Across 7 Countries</span>
+                  International Digital Portfolio
+                  <span className="block text-secondary">$2.3M Revenue Impact Across 7 Countries</span>
                 </h1>
                 <p className="text-executive">
-                  Leading technical architecture and team management for international digital
-                  properties spanning business directories, tourism platforms, and custom enterprise solutions.
+                  Leading AI-driven technical architecture and international team management for 
+                  digital properties spanning business directories, tourism platforms, and custom 
+                  enterprise solutions. Managing 12 direct reports with measurable business outcomes.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="executive" size="lg" href="/contact">
-                  Discuss Your Project
+                  <Target className="w-5 h-5 mr-2" />
+                  Executive Consultation
                 </Button>
                 <Button variant="glass" size="lg" href="/about">
-                  View Leadership Experience
+                  <TrendingUp className="w-5 h-5 mr-2" />
+                  View Leadership Metrics
                 </Button>
               </div>
             </div>
 
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
-                {portfolioMetrics.map((metric, index) => (
+                {portfolioMetrics.slice(0, 4).map((metric, index) => (
                   <MetricCard key={index} className="card-metric">
+                    <div className="text-2xl mb-2">{metric.icon}</div>
+                    <div className="metric-value text-2xl">{metric.value}</div>
+                    <div className="metric-label text-xs">{metric.label}</div>
+                  </MetricCard>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {portfolioMetrics.slice(4).map((metric, index) => (
+                  <MetricCard key={index + 4} className="card-metric">
                     <div className="text-2xl mb-2">{metric.icon}</div>
                     <div className="metric-value text-2xl">{metric.value}</div>
                     <div className="metric-label text-xs">{metric.label}</div>
@@ -248,212 +397,56 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Yellow Pages Group Portfolio */}
+      {/* Interactive Project Showcase */}
+      <ProjectsClient projects={allProjects} categories={projectCategories} />
+
+      {/* AI Leadership Impact Section */}
       <section className="section-fullwidth section-executive">
         <div className="container">
           <div className="text-center mb-16">
             <Badge variant="executive" className="mb-4">
-              <Users className="w-4 h-4 mr-2" />
-              Yellow Pages Group Network
+              <TrendingUp className="w-4 h-4 mr-2" />
+              AI Transformation Results
             </Badge>
-            <h2 className="heading-primary mb-4">International Business Directory Network</h2>
+            <h2 className="heading-primary mb-4">Measurable AI Leadership Impact</h2>
             <p className="text-executive mx-auto">
-              Leading technical architecture and customer success operations for Yellow Pages Group&apos;s
-              digital portfolio spanning Kenya, Tanzania, Mozambique, São Tomé, East Timor, Cape Verde, and Angola.
-            </p>
-          </div>
-
-          <div className="grid-executive">
-            {yellowPagesPortfolio.map((project) => (
-              <Card key={project.id} className="card-executive">
-                <CardHeader className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <div className="space-y-2">
-                      <Badge variant="outline" className="text-xs">
-                        <MapPin className="w-3 h-3 mr-1" />
-                        {project.country}
-                      </Badge>
-                      <CardTitle className="text-xl">{project.title}</CardTitle>
-                    </div>
-                    <Badge variant="success" className="text-xs">{project.year}</Badge>
-                  </div>
-                  <CardDescription className="text-sm">{project.description}</CardDescription>
-                </CardHeader>
-
-                <CardContent className="space-y-4">
-                  <div>
-                    <p className="text-sm font-medium text-color-neutral-700 mb-2">Role & Impact</p>
-                    <p className="text-xs text-color-neutral-600 mb-1">{project.role}</p>
-                    <p className="text-xs text-color-success-600 font-medium">{project.impact}</p>
-                  </div>
-
-                  <div>
-                    <p className="text-sm font-medium text-color-neutral-700 mb-2">Technologies</p>
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">{tech}</Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-4">
-                    <Button variant="glass" size="sm" href={project.url} className="w-full">
-                      <ExternalLink className="w-3 h-3 mr-2" />
-                      Visit Platform
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tourism Portfolio */}
-      <section className="section-fullwidth section-executive">
-        <div className="container">
-          <div className="text-center mb-16">
-            <Badge variant="success" className="mb-4">
-              <Globe className="w-4 h-4 mr-2" />
-              Tourism & Travel Platforms
-            </Badge>
-            <h2 className="heading-primary mb-4">East African Tourism Guides</h2>
-            <p className="text-executive mx-auto">
-              Full-stack development and SEO optimization for tourism platforms promoting destinations
-              and facilitating travel planning across multiple East African countries.
+              Quantifiable results from AI-driven technical architecture and international 
+              team leadership across digital transformation initiatives.
             </p>
           </div>
 
           <div className="grid-leadership">
-            {tourismPortfolio.map((project) => (
-              <Card key={project.id} className="card-glass">
-                <CardHeader className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <Badge variant="outline" className="text-xs">{project.category}</Badge>
-                    <Badge variant="warning" className="text-xs">{project.year}</Badge>
-                  </div>
-                  <CardTitle className="text-lg">{project.title}</CardTitle>
-                  <CardDescription className="text-sm">{project.description}</CardDescription>
-                </CardHeader>
-
-                <CardContent className="space-y-4">
+            <div className="card-executive p-8">
+              <h3 className="heading-secondary mb-6">Executive Achievement Metrics</h3>
+              <div className="space-y-6">
+                <div className="flex items-center justify-between p-4 bg-color-success-50 rounded-lg">
                   <div>
-                    <p className="text-sm font-medium text-color-neutral-700 mb-2">Technical Focus</p>
-                    <p className="text-xs text-color-neutral-600 mb-2">{project.role}</p>
-                    <p className="text-xs text-color-success-600 font-medium">{project.impact}</p>
+                    <div className="text-2xl font-bold text-color-success-700">$2.3M</div>
+                    <div className="text-sm text-color-success-600">Revenue Impact from AI Implementation</div>
                   </div>
-
+                  <div className="text-color-success-500">
+                    <TrendingUp className="w-8 h-8" />
+                  </div>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-color-primary-50 rounded-lg">
                   <div>
-                    <p className="text-sm font-medium text-color-neutral-700 mb-2">Technologies</p>
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">{tech}</Badge>
-                      ))}
-                    </div>
+                    <div className="text-2xl font-bold text-color-primary-700">40%</div>
+                    <div className="text-sm text-color-primary-600">Customer Satisfaction Improvement</div>
                   </div>
-
-                  <div className="pt-3">
-                    <Button variant="executive" size="sm" href={project.url} className="w-full">
-                      <ExternalLink className="w-3 h-3 mr-2" />
-                      Explore Platform
-                    </Button>
+                  <div className="text-color-primary-500">
+                    <Award className="w-8 h-8" />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Client Projects */}
-      <section className="section-fullwidth section-executive">
-        <div className="container">
-          <div className="text-center mb-16">
-            <Badge variant="warning" className="mb-4">
-              <Zap className="w-4 h-4 mr-2" />
-              Client Solutions
-            </Badge>
-            <h2 className="heading-primary mb-4">Custom Enterprise Solutions</h2>
-            <p className="text-executive mx-auto">
-              Tailored web development solutions for international clients across healthcare,
-              corporate communications, wellness, and professional services sectors.
-            </p>
-          </div>
-
-          <div className="content-asymmetric-left">
-            <div className="space-y-8">
-              <div className="card-executive p-8">
-                <h3 className="heading-secondary mb-6">Client Development Approach</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-color-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <h4 className="font-semibold text-primary">Discovery & Strategy</h4>
-                      <p className="text-sm text-color-neutral-600">Comprehensive requirements analysis and technical architecture planning</p>
-                    </div>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-color-warning-50 rounded-lg">
+                  <div>
+                    <div className="text-2xl font-bold text-color-warning-700">78%</div>
+                    <div className="text-sm text-color-warning-600">Deployment Error Reduction</div>
                   </div>
-                  <div className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-color-success-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <h4 className="font-semibold text-primary">Agile Development</h4>
-                      <p className="text-sm text-color-neutral-600">Iterative development with regular client feedback and testing cycles</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-color-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <h4 className="font-semibold text-primary">Performance & SEO</h4>
-                      <p className="text-sm text-color-neutral-600">Optimization for speed, search visibility, and user experience</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-color-success-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <div>
-                      <h4 className="font-semibold text-primary">Ongoing Support</h4>
-                      <p className="text-sm text-color-neutral-600">Maintenance, updates, and strategic enhancement recommendations</p>
-                    </div>
+                  <div className="text-color-warning-500">
+                    <Target className="w-8 h-8" />
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="space-y-6">
-              {clientProjects.map((project) => (
-                <Card key={project.id} className="card-glass">
-                  <CardHeader className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <Badge variant="executive" className="text-xs">{project.category}</Badge>
-                      <Badge variant="outline" className="text-xs">{project.year}</Badge>
-                    </div>
-                    <CardTitle className="text-xl">{project.title}</CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="space-y-4">
-                    <div>
-                      <p className="text-sm font-medium text-color-neutral-700 mb-2">Responsibilities</p>
-                      <p className="text-sm text-color-neutral-600 mb-2">{project.role}</p>
-                      <p className="text-sm text-color-success-600 font-medium">{project.impact}</p>
-                    </div>
-
-                    <div>
-                      <p className="text-sm font-medium text-color-neutral-700 mb-2">Technology Stack</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">{tech}</Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="pt-4">
-                      <Button variant="executive" href={project.url} className="w-full">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        View Project
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
             </div>
           </div>
         </div>

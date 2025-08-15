@@ -6,16 +6,18 @@ import Badge from '@/components/ui/Badge';
 import { Mail, Phone, MapPin, Calendar, Clock, Users, Globe, ExternalLink } from 'lucide-react';
 
 export const metadata = {
-  title: 'Contact Walter Oriaro - Executive Technology Leader | Schedule Consultation',
-  description: 'Schedule a consultation with Walter Oriaro, Head of Customer Success & Technical Architecture. Available for executive opportunities, technical consulting, speaking engagements. 24-hour response time for C-level inquiries.',
+  title: 'Contact Walter Oriaro - Chief AI Officer | $2.3M AI Revenue Impact Leader',
+  description: 'Schedule consultation with Chief AI Officer Walter Oriaro. Leading AI transformation across 7 countries with $2.3M revenue impact. Available for C-level AI strategy, executive opportunities, and AI transformation consulting. Priority response for CAIO/CTO roles.',
   keywords: [
-    'Contact Walter Oriaro', 'Executive Consultation', 'Technology Leader Contact',
-    'Customer Success Consultant', 'Technical Architecture Consulting', 'Kenya Technology Executive',
-    'International Team Management', 'Speaking Engagements', 'Executive Opportunities'
+    'Contact Walter Oriaro', 'Chief AI Officer Contact', 'AI Strategy Consultation', 'CAIO Executive',
+    'AI Transformation Leader', 'ML Leadership Consulting', 'International AI Executive',
+    'AI Strategy Executive', 'Chief AI Officer Hire', 'AI Revenue Impact Leader',
+    'Executive AI Consultation', 'C-Level AI Strategy', 'AI Leadership Speaking',
+    'Chief AI Officer Opportunities', 'AI Executive Search', 'ML Strategy Consultant'
   ],
   openGraph: {
-    title: 'Contact Walter Oriaro - Executive Technology Leader',
-    description: 'Schedule consultation with technology executive leading teams across 7 countries. 24hr response for executive inquiries.',
+    title: 'Contact Walter Oriaro - Chief AI Officer | AI Strategy Leadership',
+    description: 'Chief AI Officer with $2.3M revenue impact. Schedule consultation for AI transformation strategy and international AI team leadership.',
     type: 'website',
     images: [
       {

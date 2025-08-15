@@ -283,11 +283,153 @@ const CardImage = forwardRef(({
   );
 });
 
+/**
+ * Executive Hero Image Component
+ * Specialized for C-level executive portraits with professional styling
+ */
+const ExecutiveHeroImage = forwardRef(({
+  src,
+  alt,
+  className = '',
+  priority = true,
+  quality = 95,
+  showAIBadge = false,
+  ...props
+}, ref) => {
+  return (
+    <div className="relative">
+      <OptimizedImage
+        ref={ref}
+        src={src}
+        alt={alt}
+        className={cn('rounded-xl object-cover shadow-2xl ring-4 ring-white/10', className)}
+        width={400}
+        height={400}
+        priority={priority}
+        quality={quality}
+        sizes="(max-width: 768px) 300px, 400px"
+        {...props}
+      />
+      
+      {showAIBadge && (
+        <div className="absolute -top-2 -right-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-color-primary-500 to-color-success-500 text-white text-sm font-medium rounded-full shadow-lg">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            Chief AI Officer
+          </div>
+        </div>
+      )}
+      
+      {/* Executive status indicator */}
+      <div className="absolute bottom-4 right-4">
+        <div className="w-4 h-4 bg-color-success-500 rounded-full border-2 border-white shadow-lg animate-pulse" />
+      </div>
+    </div>
+  );
+});
+
+/**
+ * Project Showcase Image Component
+ * Enhanced for portfolio projects with metrics overlay
+ */
+const ProjectShowcaseImage = forwardRef(({
+  src,
+  alt,
+  title,
+  metrics,
+  className = '',
+  quality = 90,
+  showHover = true,
+  ...props
+}, ref) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <div 
+      className={cn('relative group cursor-pointer', className)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <CardImage
+        ref={ref}
+        src={src}
+        alt={alt}
+        aspectRatio="video"
+        className={cn(
+          'transition-transform duration-300',
+          showHover && 'group-hover:scale-105'
+        )}
+        quality={quality}
+        {...props}
+      />
+      
+      {/* Metrics overlay */}
+      {(title || metrics) && (
+        <div className={cn(
+          'absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-lg transition-opacity duration-300',
+          isHovered || !showHover ? 'opacity-100' : 'opacity-0'
+        )}>
+          <div className="absolute bottom-4 left-4 right-4 text-white">
+            {title && <h3 className="font-semibold text-lg mb-1">{title}</h3>}
+            {metrics && <p className="text-sm opacity-90">{metrics}</p>}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+});
+
+/**
+ * AI Leadership Badge Component
+ * Visual indicator for AI-enhanced features
+ */
+const AILeadershipBadge = ({ variant = 'default', size = 'sm', className = '' }) => {
+  const variants = {
+    default: 'bg-gradient-to-r from-color-primary-500 to-color-success-500',
+    outline: 'border-2 border-color-primary-500 text-color-primary-600 bg-transparent',
+    solid: 'bg-color-primary-600 text-white'
+  };
+
+  const sizes = {
+    sm: 'px-2 py-1 text-xs',
+    md: 'px-3 py-1 text-sm',
+    lg: 'px-4 py-2 text-base'
+  };
+
+  return (
+    <div className={cn(
+      'inline-flex items-center gap-2 font-medium rounded-full',
+      variants[variant],
+      sizes[size],
+      'text-white',
+      className
+    )}>
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      Chief AI Officer
+    </div>
+  );
+};
+
 // Set display names
 OptimizedImage.displayName = 'OptimizedImage';
 HeroImage.displayName = 'HeroImage';
 AvatarImage.displayName = 'AvatarImage';
 CardImage.displayName = 'CardImage';
+ExecutiveHeroImage.displayName = 'ExecutiveHeroImage';
+ProjectShowcaseImage.displayName = 'ProjectShowcaseImage';
+AILeadershipBadge.displayName = 'AILeadershipBadge';
 
-export { OptimizedImage, HeroImage, AvatarImage, CardImage };
+export { 
+  OptimizedImage, 
+  HeroImage, 
+  AvatarImage, 
+  CardImage,
+  ExecutiveHeroImage,
+  ProjectShowcaseImage,
+  AILeadershipBadge
+};
 export default OptimizedImage;

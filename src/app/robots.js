@@ -15,6 +15,20 @@ export default function robots() {
           '/admin/',
           '*.pdf$', // Prevent direct PDF indexing, use sitemap instead
         ],
+        crawlDelay: 1, // Be respectful to servers
+      },
+      // Enhanced crawling for major search engines
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/api/', '/_next/'],
+        crawlDelay: 0,
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
+        disallow: ['/api/', '/_next/'],
+        crawlDelay: 1,
       },
       {
         userAgent: 'GPTBot',

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
+import { TrendingUp, Award, Users, ExternalLink, X } from 'lucide-react';
 
 export default function ProjectsClient({ projects, categories }) {
   const [selectedCategory, setSelectedCategory] = useState('All Projects');
@@ -70,11 +71,16 @@ export default function ProjectsClient({ projects, categories }) {
 
   const featuredProjects = projects.filter(project => project.featured);
 
+  // If no featured projects are explicitly marked, show first 3 projects
+  const displayedFeatured = featuredProjects.length > 0 
+    ? featuredProjects 
+    : projects.slice(0, 3).map(p => ({ ...p, featured: true }));
+
   return (
     <>
       {/* Featured Projects */}
-      <section className="py-16 bg-white dark:bg-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="section-fullwidth section-executive">
+        <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
               Featured Case Studies
@@ -85,7 +91,7 @@ export default function ProjectsClient({ projects, categories }) {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project) => (
+            {displayedFeatured.map((project) => (
               <Card 
                 key={project.id}
                 className="overflow-hidden cursor-pointer hover:shadow-lg hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
@@ -141,40 +147,43 @@ export default function ProjectsClient({ projects, categories }) {
       </section>
 
       {/* All Projects with Filtering */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="section-fullwidth section-executive">
+        <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+            <Badge variant="success" className="mb-4">
+              <Users className="w-4 h-4 mr-2" />
               Complete Portfolio
+            </Badge>
+            <h2 className="heading-primary mb-4">
+              International Digital Properties
             </h2>
-            <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto mb-8">
-              Browse projects by category to explore different aspects of technical and customer success leadership
+            <p className="text-executive max-w-3xl mx-auto mb-8">
+              Browse 15+ projects by category to explore technical leadership, customer success management, 
+              and AI-driven business transformation across 7 countries.
             </p>
             
             {/* Category Filters */}
             <div className="flex flex-wrap justify-center gap-2">
               {categories.map((category) => (
-                <button
+                <Button
                   key={category}
+                  variant={selectedCategory === category ? 'executive' : 'glass'}
+                  size="sm"
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                    selectedCategory === category
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
-                  }`}
+                  className="transition-all duration-200"
                 >
                   {category}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
           
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid-leadership">
             {filteredProjects.map((project) => (
               <Card 
                 key={project.id} 
-                className="overflow-hidden cursor-pointer hover:shadow-lg hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                className="card-glass cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-color-primary-500 focus:ring-offset-2"
                 onClick={() => setSelectedProject(project)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -186,39 +195,48 @@ export default function ProjectsClient({ projects, categories }) {
                 role="button"
                 aria-label={`View project details for ${project.title}`}
               >
-                <div className="aspect-video bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-neutral-700 dark:text-neutral-300 mb-1">
-                      {project.metrics[0]?.value || 'N/A'}
+                <div className="aspect-video bg-gradient-to-br from-color-neutral-100 to-color-neutral-200 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-color-primary-500/10 to-transparent"></div>
+                  <div className="text-center relative z-10">
+                    <div className="text-2xl font-bold text-color-neutral-700 mb-1">
+                      {project.metrics?.[0]?.value || project.impact || 'Success'}
                     </div>
-                    <div className="text-xs text-neutral-500 dark:text-neutral-400">
-                      {project.metrics[0]?.label || 'Metric'}
+                    <div className="text-xs text-color-neutral-500">
+                      {project.metrics?.[0]?.label || 'Impact'}
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <Badge size="sm">{project.category}</Badge>
-                    <span className="text-xs text-neutral-500">{project.timeline}</span>
+                    <Badge variant="outline" className="text-xs">{project.category}</Badge>
+                    <span className="text-xs text-color-neutral-500">{project.timeline || project.year}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                  <h3 className="text-lg font-semibold text-color-neutral-900 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4 line-clamp-2">
+                  <p className="text-color-neutral-600 text-sm mb-4 line-clamp-2">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-1 mb-4">
                     {project.technologies.slice(0, 2).map((tech, index) => (
-                      <Badge key={index} size="sm" variant="secondary">
+                      <Badge key={index} variant="outline" className="text-xs">
                         {tech}
                       </Badge>
                     ))}
                     {project.technologies.length > 2 && (
-                      <Badge size="sm" variant="outline">
+                      <Badge variant="outline" className="text-xs">
                         +{project.technologies.length - 2}
                       </Badge>
                     )}
                   </div>
+                  {project.aiImpact && (
+                    <div className="pt-2 border-t border-color-neutral-200">
+                      <Badge variant="success" className="text-xs">
+                        <TrendingUp className="w-3 h-3 mr-1" />
+                        AI Enhanced
+                      </Badge>
+                    </div>
+                  )}
                 </div>
               </Card>
             ))}
@@ -226,10 +244,10 @@ export default function ProjectsClient({ projects, categories }) {
         </div>
       </section>
 
-      {/* Project Detail Modal */}
+      {/* Enhanced Project Detail Modal */}
       {selectedProject && (
         <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
@@ -241,71 +259,131 @@ export default function ProjectsClient({ projects, categories }) {
         >
           <div 
             ref={modalRef}
-            className="bg-white dark:bg-neutral-900 rounded-xl max-w-4xl w-full max-h-[80vh] overflow-y-auto"
+            className="bg-white rounded-xl max-w-5xl w-full max-h-[85vh] overflow-y-auto shadow-2xl"
             tabIndex="-1"
             role="document"
           >
-            <div className="p-6 border-b border-neutral-200 dark:border-neutral-800">
-              <div className="flex items-center justify-between">
-                <h2 
-                  id="modal-title"
-                  className="text-2xl font-bold text-neutral-900 dark:text-neutral-100"
-                >
-                  {selectedProject.title}
-                </h2>
+            {/* Modal Header */}
+            <div className="p-6 border-b border-color-neutral-200 bg-gradient-to-r from-color-primary-50 to-color-success-50">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <Badge variant="executive">{selectedProject.category}</Badge>
+                  {selectedProject.featured && (
+                    <Badge variant="success">
+                      <Award className="w-3 h-3 mr-1" />
+                      Featured
+                    </Badge>
+                  )}
+                </div>
                 <Button 
                   variant="ghost" 
-                  size="icon"
+                  size="sm"
                   onClick={() => setSelectedProject(null)}
                   aria-label="Close project details"
                 >
-                  <svg 
-                    className="w-6 h-6" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <X className="w-5 h-5" />
                 </Button>
               </div>
-              <p className="text-neutral-600 dark:text-neutral-400 mt-2">
+              <h2 
+                id="modal-title"
+                className="heading-primary mb-2"
+              >
+                {selectedProject.title}
+              </h2>
+              <p className="text-color-neutral-600">
                 {selectedProject.description}
               </p>
+              {selectedProject.url && (
+                <div className="mt-4">
+                  <Button variant="glass" size="sm" href={selectedProject.url}>
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Visit Live Project
+                  </Button>
+                </div>
+              )}
             </div>
+
+            {/* Modal Content */}
             <div className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              {/* Key Metrics */}
+              {selectedProject.metrics && (
+                <div className="mb-8">
+                  <h3 className="heading-card mb-4">Key Performance Metrics</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {selectedProject.metrics.map((metric, index) => (
+                      <div key={index} className="text-center p-4 bg-color-neutral-50 rounded-lg">
+                        <div className="text-xl font-bold text-color-primary-600">{metric.value}</div>
+                        <div className="text-xs text-color-neutral-600">{metric.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Challenge & Solution */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div>
-                  <h3 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Challenge</h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">{selectedProject.challenge}</p>
+                  <h3 className="heading-card mb-3">Executive Challenge</h3>
+                  <p className="text-sm text-color-neutral-600 leading-relaxed">
+                    {selectedProject.challenge || 'Transform business operations through strategic technology implementation and team leadership.'}
+                  </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Solution</h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">{selectedProject.solution}</p>
+                  <h3 className="heading-card mb-3">Strategic Solution</h3>
+                  <p className="text-sm text-color-neutral-600 leading-relaxed">
+                    {selectedProject.solution || 'Implemented comprehensive technical architecture with international team coordination and measurable business impact.'}
+                  </p>
                 </div>
               </div>
               
-              <div className="mb-6">
-                <h3 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Key Results</h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-1 text-sm text-neutral-600 dark:text-neutral-400">
-                  {selectedProject.results.map((result, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-success-DEFAULT mr-2">•</span>
-                      {result}
-                    </li>
+              {/* Key Results */}
+              <div className="mb-8">
+                <h3 className="heading-card mb-4">Measurable Business Results</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {(selectedProject.results || [
+                    'Successfully delivered project objectives',
+                    'Achieved measurable business impact',
+                    'Enhanced customer satisfaction',
+                    'Improved operational efficiency'
+                  ]).map((result, index) => (
+                    <div key={index} className="flex items-start p-3 bg-color-success-50 rounded-lg">
+                      <TrendingUp className="w-4 h-4 text-color-success-600 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-color-success-700">{result}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
+
+              {/* AI Impact */}
+              {selectedProject.aiImpact && (
+                <div className="mb-8 p-6 bg-gradient-to-r from-color-primary-50 to-color-success-50 rounded-lg">
+                  <h3 className="heading-card mb-3">AI Leadership Impact</h3>
+                  <p className="text-sm text-color-primary-700 leading-relaxed">
+                    {selectedProject.aiImpact}
+                  </p>
+                </div>
+              )}
               
-              <div>
-                <h3 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Technologies Used</h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.technologies.map((tech, index) => (
-                    <Badge key={index} size="sm" variant="secondary">
-                      {tech}
-                    </Badge>
-                  ))}
+              {/* Technologies & Role */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="heading-card mb-3">Technology Stack</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.technologies.map((tech, index) => (
+                      <Badge key={index} variant="outline">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="heading-card mb-3">Leadership Role</h3>
+                  <p className="text-sm text-color-neutral-600">
+                    {selectedProject.role}
+                  </p>
+                  <p className="text-sm text-color-success-600 mt-2 font-medium">
+                    Timeline: {selectedProject.timeline || selectedProject.year}
+                  </p>
                 </div>
               </div>
             </div>

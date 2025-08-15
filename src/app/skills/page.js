@@ -3,14 +3,20 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, MetricCard }
 import { SkillProgress, CircularProgress } from '@/components/ui/ProgressBar';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
+import SkillsClient from './skills-client';
 import {
   Code, Users, Cloud, Database, Shield, Zap,
-  Globe, TrendingUp, Award, Target, Brain, Heart
+  Globe, TrendingUp, Award, Target, Brain, Heart, Cpu, BarChart3
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Skills & Expertise - Walter Okumu Oriaro',
-  description: 'Technical and leadership skills portfolio showcasing expertise in full-stack development, DevOps, cloud architecture, and international team management.',
+  title: 'Executive Skills Matrix - Walter Oriaro | AI Leadership & Technical Excellence',
+  description: 'Interactive skills portfolio showcasing Chief AI Officer capabilities: $2.3M revenue impact through ML implementation, international team leadership across 7 countries, and executive-level technical architecture expertise.',
+  keywords: 'Chief AI Officer Skills, Technical Leadership Matrix, International Team Management, AI Implementation, Executive Technology Skills, ML Operations',
+  openGraph: {
+    title: 'Walter Oriaro - Executive Skills Matrix | AI Leadership Excellence',
+    description: 'Interactive portfolio demonstrating $2.3M AI revenue impact and international technical leadership.',
+  }
 };
 
 // Executive Leadership Skills
@@ -161,31 +167,75 @@ const businessSkills = [
   }
 ];
 
-// Skill metrics and achievements
+// Enhanced AI-focused skill metrics
 const skillMetrics = [
+  {
+    value: '$2.3M',
+    label: 'AI Revenue Impact',
+    description: 'ML implementation results',
+    icon: '🤖'
+  },
   {
     value: '95%',
     label: 'Technical Proficiency',
-    description: 'Frontend & Backend Development',
+    description: 'AI/ML & Full-Stack Development',
     icon: '💻'
   },
   {
     value: '92%',
-    label: 'Leadership Effectiveness',
-    description: 'International team management',
+    label: 'Leadership Effectiveness', 
+    description: '12 direct reports, 7 countries',
     icon: '👥'
+  },
+  {
+    value: '280%',
+    label: 'ML Performance Gain',
+    description: 'Search algorithm optimization',
+    icon: '📈'
   },
   {
     value: '90%',
     label: 'Strategic Impact',
-    description: 'Business transformation results',
+    description: 'AI transformation results',
     icon: '🎯'
   },
   {
     value: '6+',
     label: 'Years Experience',
-    description: 'Full-stack development expertise',
+    description: 'Technical & AI leadership',
     icon: '⏱️'
+  }
+];
+
+// AI Leadership Skills (Enhanced)
+const aiLeadershipSkills = [
+  {
+    category: 'Chief AI Officer Strategy',
+    icon: Brain,
+    level: 90,
+    experience: '3+ years',
+    description: 'Developing enterprise AI transformation strategies with quantifiable business impact and international implementation.',
+    achievements: [
+      '$2.3M revenue impact from AI initiatives',
+      'AI roadmap execution across 7 countries',
+      'C-level AI strategy presentations',
+      'Cross-functional AI team coordination (12 reports)'
+    ],
+    impact: 'Executive AI leadership positioning with measurable transformation results'
+  },
+  {
+    category: 'ML Operations & Implementation',
+    icon: Cpu,
+    level: 85,
+    experience: '3+ years',
+    description: 'Implementing production ML systems with automated deployment, monitoring, and continuous improvement frameworks.',
+    achievements: [
+      '280% ML search performance improvement',
+      'Production ML model deployment automation',
+      'AI-powered customer success workflows',
+      'Predictive analytics implementation'
+    ],
+    impact: 'Scalable ML operations supporting 5M+ monthly users with 99.7% uptime'
   }
 ];
 
@@ -226,39 +276,123 @@ export default function Skills() {
           <div className="hero-asymmetric">
             <div className="space-y-8">
               <div>
+                <Badge variant="executive" className="mb-4">
+                  <Brain className="w-4 h-4 mr-2" />
+                  Chief AI Officer Skills Matrix
+                </Badge>
                 <h1 className="heading-display mb-6">
-                  Technical Excellence
-                  <span className="block text-color-neutral-700">& Leadership Mastery</span>
+                  AI-Driven Executive Excellence
+                  <span className="block text-color-success-600">$2.3M Revenue Impact Portfolio</span>
                 </h1>
                 <p className="text-executive">
-                  Combining deep technical expertise with executive leadership capabilities.
-                  Proven track record in international team management, system architecture,
-                  and customer success transformation.
+                  Interactive skills showcase demonstrating Chief AI Officer capabilities:
+                  ML-powered business transformation, international team leadership across 7 countries,
+                  and technical architecture expertise driving measurable results.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="executive" size="lg" href="/contact">
-                  Discuss Technical Leadership
+                  <Target className="w-5 h-5 mr-2" />
+                  Chief AI Officer Consultation
                 </Button>
                 <Button variant="glass" size="lg" href="/projects">
-                  View Technical Portfolio
+                  <BarChart3 className="w-5 h-5 mr-2" />
+                  View AI Impact Results
                 </Button>
               </div>
             </div>
 
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
-                {skillMetrics.map((metric, index) => (
+                {skillMetrics.slice(0, 4).map((metric, index) => (
                   <MetricCard key={index} className="card-metric">
                     <div className="text-2xl mb-2">{metric.icon}</div>
-                    <div className="metric-value text-2xl">{metric.value}</div>
+                    <div className="metric-value text-xl">{metric.value}</div>
+                    <div className="metric-label text-xs">{metric.label}</div>
+                    <div className="metric-description text-xs">{metric.description}</div>
+                  </MetricCard>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {skillMetrics.slice(4).map((metric, index) => (
+                  <MetricCard key={index + 4} className="card-metric">
+                    <div className="text-2xl mb-2">{metric.icon}</div>
+                    <div className="metric-value text-xl">{metric.value}</div>
                     <div className="metric-label text-xs">{metric.label}</div>
                     <div className="metric-description text-xs">{metric.description}</div>
                   </MetricCard>
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Leadership Impact Section */}
+      <section className="section-fullwidth section-executive">
+        <div className="container">
+          <div className="text-center mb-16">
+            <Badge variant="executive" className="mb-4">
+              <Brain className="w-4 h-4 mr-2" />
+              Chief AI Officer Capabilities
+            </Badge>
+            <h2 className="heading-primary mb-4">AI-Driven Leadership Excellence</h2>
+            <p className="text-executive mx-auto">
+              Enhanced leadership skills with AI implementation expertise delivering quantifiable business results
+            </p>
+          </div>
+
+          <div className="grid-executive">
+            {aiLeadershipSkills.map((skill, index) => (
+              <Card key={index} className="card-executive">
+                <CardHeader className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 rounded-full bg-gradient-executive flex items-center justify-center text-white ring-2 ring-color-primary-300">
+                        <Brain className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-lg">{skill.category}</CardTitle>
+                        <div className="flex items-center gap-2">
+                          <Badge variant="success" className="text-xs">{skill.experience}</Badge>
+                          <Badge variant="executive" className="text-xs">
+                            <TrendingUp className="w-3 h-3 mr-1" />
+                            AI Impact
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <CircularProgress value={skill.level} size="lg" />
+                      <div className="text-xs text-color-neutral-600 mt-1">{skill.level}%</div>
+                    </div>
+                  </div>
+                  <CardDescription>{skill.description}</CardDescription>
+                </CardHeader>
+
+                <CardContent className="space-y-4">
+                  <div>
+                    <p className="text-sm font-medium text-color-neutral-700 mb-3">Key Achievements</p>
+                    <div className="space-y-2">
+                      {skill.achievements.map((achievement, achIndex) => (
+                        <div key={achIndex} className="flex items-start">
+                          <TrendingUp className="w-3 h-3 text-color-success-500 mr-2 mt-1 flex-shrink-0" />
+                          <span className="text-sm text-color-neutral-600">{achievement}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {skill.impact && (
+                    <div className="p-4 bg-gradient-to-r from-color-primary-50 to-color-success-50 rounded-lg border border-color-primary-200">
+                      <p className="text-sm font-medium text-color-primary-800 mb-1">Business Impact</p>
+                      <p className="text-sm text-color-primary-700">{skill.impact}</p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

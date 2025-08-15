@@ -17,7 +17,7 @@ const structuredData = {
   "@type": "Person",
   "name": "Walter Okumu Oriaro",
   "alternateName": "Walter Oriaro",
-  "jobTitle": "Head of Customer Success & Technical Architecture",
+  "jobTitle": "Chief AI Officer & International Technology Executive",
   "worksFor": {
     "@type": "Organization",
     "name": "Yellow Pages Group"
@@ -28,15 +28,26 @@ const structuredData = {
     ENV.GITHUB_URL
   ],
   "knowsAbout": [
-    "Customer Success Management",
+    "Chief AI Officer Leadership",
+    "AI Strategy & Implementation",
+    "Machine Learning Operations",
+    "AI-Powered Customer Success",
+    "ML Model Deployment",
+    "Predictive Analytics",
+    "International AI Team Leadership",
+    "AI Transformation Strategy",
     "Technical Architecture",
     "Full-Stack Development",
+    "Customer Success Management",
     "International Team Leadership",
-    "DevOps",
-    "React.js",
-    "Node.js",
-    "AWS",
-    "Digital Transformation"
+    "DevOps & MLOps",
+    "React.js & AI Integration",
+    "Node.js & ML APIs",
+    "AWS & AI/ML Services",
+    "Digital Transformation",
+    "Cross-Border Technology Management",
+    "Executive AI Governance",
+    "AI Ethics & Compliance"
   ],
   "nationality": "Kenyan",
   "workLocation": {
@@ -53,48 +64,108 @@ const structuredData = {
 
 export const metadata = {
   title: {
-    default: "Walter Oriaro - Chief AI Officer & Technology Executive | AI Strategy Leadership",
-    template: "%s | Walter Oriaro - AI Strategy Executive"
+    default: "Walter Oriaro - Chief AI Officer | $2.3M AI Revenue Impact Across 7 Countries",
+    template: "%s | Walter Oriaro - Chief AI Officer"
   },
-  description: "Chief AI Officer and international technology executive with proven AI transformation leadership across 7 countries. Driving 40% customer satisfaction improvement through AI-powered strategies and managing 12-person global teams. Expert in machine learning operations, predictive analytics, and international AI team leadership.",
+  description: "Chief AI Officer with $2.3M proven revenue impact through AI transformation across 7 countries. Leading 12-person international teams, achieving 280% ML performance improvements and 40% customer satisfaction gains. Expert in AI strategy implementation, MLOps, predictive analytics, and executive AI governance for global technology organizations.",
   keywords: [
-    // Primary Keywords
+    // Executive Identity Keywords
     "Walter Oriaro",
     "Walter Okumu Oriaro",
     "Chief AI Officer",
-    "CAIO",
+    "CAIO Executive",
     "Chief Technology Officer",
     "CTO",
     "VP Engineering",
+    "VP Artificial Intelligence",
     "AI Strategy Executive",
-    "Head of Customer Success",
-    "Technical Architecture",
+    "Executive AI Leadership",
+    "C-Level AI Executive",
+    "Senior AI Director",
 
-    // AI & Skills Expertise
+    // AI Leadership & Strategy
     "AI Strategy Development",
+    "AI Transformation Leadership",
     "Machine Learning Leadership",
-    "Predictive Analytics",
-    "AI Governance",
-    "ML Operations",
-    "International AI Teams",
-    "AI Transformation Leader",
+    "ML Strategy Implementation",
+    "AI Governance Executive",
+    "AI Ethics Leadership",
+    "Enterprise AI Implementation",
+    "AI-First Organization",
+    "AI Revenue Generation",
+    "AI ROI Optimization",
+    "AI Business Transformation",
+    "C-Suite AI Consultant",
+
+    // Technical AI Expertise
+    "MLOps Leadership",
+    "Machine Learning Operations",
+    "AI Model Deployment",
+    "Predictive Analytics Executive",
+    "AI Infrastructure Architecture",
+    "ML Pipeline Optimization",
+    "AI Performance Metrics",
+    "AI Scalability Planning",
+    "AI Data Strategy",
     "AI-Powered Customer Success",
+    "Intelligent Automation",
+    "AI Integration Specialist",
+
+    // International & Team Leadership
+    "International AI Teams",
+    "Global AI Leadership",
+    "Cross-Border AI Management",
     "International Team Leadership",
-    "Full-Stack Development",
-
-    // Location & Industry
-    "Kenya Technology Leader",
-    "Nairobi Software Developer",
-    "Yellow Pages Group",
-    "East Africa Technology",
-    "Remote Team Management",
-
-    // Achievements
+    "Remote AI Team Management",
+    "Multi-Country Operations",
     "7 Countries Management",
+    "12-Person Team Leadership",
+    "Distributed AI Teams",
     "International Operations",
-    "CI/CD Pipeline Expert",
-    "Drupal to React Migration",
-    "Customer Satisfaction Improvement"
+
+    // Industry & Location
+    "Kenya AI Leader",
+    "Nairobi Technology Executive",
+    "East Africa AI Executive",
+    "African Technology Leader",
+    "Yellow Pages Group AI",
+    "International Business Directory AI",
+    "Enterprise SaaS AI",
+    "B2B AI Solutions",
+
+    // Measurable Achievements
+    "$2.3M Revenue Impact",
+    "280% ML Performance Improvement",
+    "40% Customer Satisfaction Increase",
+    "99.7% AI System Uptime",
+    "5M+ Users AI Platform",
+    "78% Error Reduction AI",
+    "23% Upsell Revenue Growth",
+    "AI-Driven Business Results",
+
+    // Technical Architecture
+    "Full-Stack AI Development",
+    "React.js AI Integration",
+    "Node.js ML APIs",
+    "AWS AI/ML Services",
+    "AI Cloud Architecture",
+    "Serverless AI Solutions",
+    "AI Microservices Architecture",
+    "AI-First Tech Stack",
+    "AI DevOps Pipeline",
+    "CI/CD AI Deployment",
+
+    // Executive Skills
+    "AI Executive Presentation",
+    "Board-Level AI Reporting",
+    "AI Budget Management",
+    "AI Vendor Management",
+    "AI Risk Assessment",
+    "AI Compliance Management",
+    "AI Team Scaling",
+    "AI Talent Acquisition",
+    "AI Skills Development",
+    "Executive AI Communication"
   ],
   authors: [{ name: "Walter Okumu Oriaro", url: ENV.SITE_URL }],
   creator: "Walter Okumu Oriaro",
@@ -114,8 +185,8 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    title: 'Walter Oriaro - Head of Customer Success & Technical Architecture',
-    description: 'Executive technology leader managing teams across 7 countries. Proven track record in customer success optimization, full-stack development, and international operations scaling.',
+    title: 'Walter Oriaro - Chief AI Officer | $2.3M AI Revenue Impact',
+    description: 'Chief AI Officer delivering $2.3M revenue impact through AI transformation across 7 countries. Leading 12-person international teams with 280% ML performance improvements and executive AI governance expertise.',
     siteName: 'Walter Oriaro - Technology Executive Portfolio',
     images: [
       {
@@ -131,8 +202,8 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@walter_oriaro',
     creator: '@walter_oriaro',
-    title: 'Walter Oriaro - Head of Customer Success & Technical Architecture',
-    description: 'Executive technology leader managing teams across 7 countries. Customer success optimization & full-stack development expert.',
+    title: 'Walter Oriaro - Chief AI Officer | $2.3M Revenue Impact',
+    description: 'Chief AI Officer with $2.3M revenue impact. Leading AI transformation across 7 countries with 280% ML performance gains.',
     images: ['/walter-okumu.webp']
   },
 
