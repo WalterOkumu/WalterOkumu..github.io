@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { trackEvent } from '@/lib/analytics';
-import { 
+import {
   Calendar,
   MapPin,
   Users,
@@ -19,7 +19,7 @@ import {
  * Executive Timeline Component - Advanced Interactive Career Progression
  * Implements sophisticated animations, accessibility, and executive-level presentation
  */
-const ExecutiveTimeline = ({ 
+const ExecutiveTimeline = ({
   timelineData = [],
   className = '',
   variant = 'executive',
@@ -29,36 +29,36 @@ const ExecutiveTimeline = ({
   const [activeItem, setActiveItem] = useState(null);
   const [hoveredItem, setHoveredItem] = useState(null);
   const containerRef = useRef(null);
-  
+
   // Scroll-driven animations
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start 80%", "end 20%"]
   });
-  
+
   const timelineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0.8]);
 
   // Executive timeline data with achievements
   const executiveTimeline = timelineData.length > 0 ? timelineData : [
     {
-      id: '2024',
-      year: '2024',
-      title: 'Chief AI Officer & International Technology Executive',
-      company: 'Yellow Pages Group',
-      location: 'Toronto, Canada',
+              id: '2024',
+        year: '2024',
+        title: 'Head of Customer Success & Technical Architecture',
+        company: 'Yellow Pages Group',
+        location: 'Nairobi, Kenya',
       type: 'executive',
       icon: Zap,
       achievements: [
         'Leading AI transformation across 7 countries',
-        '$2.3M revenue impact through ML implementations',
+        '40% customer satisfaction improvement through technical transformation',
         '40% customer satisfaction improvement',
         '99.2% system reliability achievement'
       ],
       stats: {
         teams: '12 Direct Reports',
         countries: '7 Countries',
-        revenue: '$2.3M Impact',
+        revenue: '40% Satisfaction Impact',
         satisfaction: '40% Improvement'
       },
       skills: ['AI Strategy', 'International Leadership', 'ML Architecture', 'Team Scaling'],
@@ -67,47 +67,47 @@ const ExecutiveTimeline = ({
     {
       id: '2023',
       year: '2023',
-      title: 'Senior Technology Leader & AI Implementation Specialist',
-      company: 'Yellow Pages Group',
-      location: 'Toronto, Canada',
-      type: 'leadership',
-      icon: Target,
-      achievements: [
-        'Scaled international development teams',
-        'Implemented ML-driven customer solutions',
-        'Established AI center of excellence',
-        'Led digital transformation initiatives'
-      ],
-      stats: {
-        teams: '8 Team Members',
-        projects: '15 AI Projects',
-        efficiency: '35% Improvement',
-        uptime: '99.1% Reliability'
-      },
-      skills: ['Machine Learning', 'Team Leadership', 'Solution Architecture', 'Agile Management'],
+              title: 'Senior Web Developer',
+        company: 'Yellow Pages Group',
+        location: 'Nairobi, Kenya',
+        type: 'development',
+        icon: Target,
+        achievements: [
+          'Spearheaded flagship platform migration from Drupal to ReactJS',
+          'Architected scalable API backend using Node.js and PostgreSQL',
+          'Established CI/CD foundation for international expansion',
+          'Collaborated with international marketing teams on SEO optimization'
+        ],
+        stats: {
+          teams: '3 Team Members',
+          projects: '5 Platform Projects',
+          efficiency: '20% Performance Improvement',
+          uptime: '99.5% Reliability'
+        },
+              skills: ['Technical Architecture', 'Team Leadership', 'Solution Architecture', 'Agile Management'],
       color: 'secondary'
     },
     {
       id: '2022',
       year: '2022',
-      title: 'Customer Success Technology Manager',
-      company: 'Yellow Pages Group',
-      location: 'Toronto, Canada',
-      type: 'management',
-      icon: Users,
-      achievements: [
-        'Built customer success automation platform',
-        'Reduced resolution time by 60%',
-        'Implemented predictive analytics',
-        'Achieved 98% customer retention'
-      ],
-      stats: {
-        retention: '98% Customer Retention',
-        resolution: '60% Faster Resolution',
-        automation: '80% Process Automation',
-        satisfaction: '95% CSAT Score'
-      },
-      skills: ['Customer Success', 'Process Automation', 'Data Analytics', 'System Integration'],
+              title: 'Full-Stack Web Developer',
+        company: 'Microverse',
+        location: 'Remote',
+        type: 'development',
+        icon: Users,
+        achievements: [
+          'Completed 1300+ hours of intensive full-stack training',
+          'Developed expertise in algorithms, data structures, and modern web technologies',
+          'Gained proficiency in remote pair programming using GitHub and GitFlow',
+          'Built strong foundation in full-stack development principles and practices'
+        ],
+        stats: {
+          training: '1300+ Hours',
+          projects: '15+ Portfolio Projects',
+          collaboration: 'Remote Pair Programming',
+          technologies: 'Modern Web Stack'
+        },
+        skills: ['JavaScript', 'React', 'Ruby on Rails', 'PostgreSQL', 'Git', 'Remote Collaboration'],
       color: 'accent'
     }
   ];
@@ -115,7 +115,7 @@ const ExecutiveTimeline = ({
   // Handle item interactions with analytics
   const handleItemClick = (item) => {
     if (!interactive) return;
-    
+
     setActiveItem(activeItem === item.id ? null : item.id);
     trackEvent('timeline_interaction', {
       action: 'click',
@@ -127,7 +127,7 @@ const ExecutiveTimeline = ({
 
   const handleItemHover = (item, isHovering) => {
     if (!interactive) return;
-    
+
     setHoveredItem(isHovering ? item.id : null);
     if (isHovering) {
       trackEvent('timeline_interaction', {
@@ -173,7 +173,7 @@ const ExecutiveTimeline = ({
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={cn(
         'relative executive-timeline',
@@ -192,7 +192,7 @@ const ExecutiveTimeline = ({
           Executive Career Timeline
         </h2>
         <p className="text-executive text-neutral-700 dark:text-neutral-300 max-w-3xl mx-auto">
-          International technology leadership progression with measurable impact across 
+          International technology leadership progression with measurable impact across
           AI transformation, team scaling, and customer success innovation.
         </p>
       </motion.div>
@@ -254,7 +254,7 @@ const TimelineItem = ({
 }) => {
   const isLeft = index % 2 === 0;
   const IconComponent = item.icon;
-  
+
   // Color mappings for executive presentation
   const colorMappings = {
     primary: {

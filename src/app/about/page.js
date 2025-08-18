@@ -1,35 +1,35 @@
 import Layout from '@/components/ui/Layout';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, MetricCard } from '@/components/ui/Card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import { ProfessionalTimeline } from '@/components/ui/Timeline';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 
 export const metadata = {
-  title: 'About - Walter Oriaro | Chief AI Officer & International Technology Executive',
-  description: 'Executive leadership in AI transformation across 7 countries. Walter Oriaro drives $2.3M revenue impact through ML implementations, international team scaling, and customer success innovation. C-level technology leadership with measurable results.',
-  keywords: 'Chief AI Officer, AI Leadership, International Technology Executive, ML Implementation, Team Scaling, Customer Success, Revenue Impact, AI Strategy',
+  title: 'About - Walter Oriaro | Head of Customer Success & Technical Architecture',
+  description: 'Executive leadership in customer success and technical architecture across 7 countries. Walter Oriaro drives 40% customer satisfaction improvement, international team scaling, and technical infrastructure transformation.',
+  keywords: 'Head of Customer Success, Technical Architecture, International Technology Executive, Team Leadership, Customer Success, Technical Infrastructure, International Operations',
   openGraph: {
-    title: 'Walter Oriaro - Chief AI Officer & International Executive',
-    description: 'Leading AI transformation across 7 countries with $2.3M revenue impact and 40% customer satisfaction improvement.',
+    title: 'Walter Oriaro - Head of Customer Success & Technical Architecture',
+    description: 'Leading customer success and technical architecture across 7 countries with 40% customer satisfaction improvement and 78% deployment error reduction.',
   }
 };
 
-// Executive AI Leadership Experience
+// Executive Leadership Experience (Corrected to match resume)
 const professionalExperience = [
   {
-    title: 'Chief AI Officer & International Technology Executive',
+    title: 'Head of Customer Success & Technical Architecture',
     company: 'Yellow Pages Group',
-    period: 'June 2024 - Present',
-    location: 'Toronto, Canada & International Operations (7 Countries)',
+    period: 'June 2023 - Present',
+    location: 'Nairobi, Kenya & International Operations (7 Countries)',
     executiveLevel: true,
-    revenueImpact: '$2.3M',
+    revenueImpact: '23%',
     teamSize: '12 Direct Reports',
     countries: '7 Countries',
     description: [
-      'Executive leadership of AI transformation strategy across Yellow Pages Group\'s international operations spanning 7 countries: Canada, Kenya, Tanzania, Mozambique, São Tomé, East Timor, Cape Verde, and Angola',
-      'Drive C-level AI initiatives with measurable business impact: $2.3M revenue generation, 40% customer satisfaction improvement, and 99.2% system reliability achievement',
-      'Scale and lead international AI development teams with 12 direct reports across multiple time zones, implementing advanced ML architectures and customer success automation',
-      'Establish AI centers of excellence and lead digital transformation initiatives with focus on machine learning, predictive analytics, and intelligent customer engagement systems'
+      'Executive leadership of customer success operations and technical infrastructure for Yellow Pages Group\'s international operations spanning 7 countries: Kenya, Tanzania, Mozambique, São Tomé, East Timor, Cape Verde, and Angola',
+      'Drive dual-mandate leadership with measurable business impact: 40% customer satisfaction improvement, 78% deployment error reduction, and 23% upsell revenue growth',
+      'Scale and lead international teams with 12 direct reports across multiple time zones, implementing technical architecture and customer success automation',
+      'Establish customer success centers of excellence and lead digital transformation initiatives with focus on technical infrastructure, customer engagement systems, and operational efficiency'
     ],
     achievements: [
       'Designed comprehensive customer fulfillment operations reducing time-to-value from 3 weeks to 5 days',
@@ -60,42 +60,42 @@ const professionalExperience = [
     technologies: ['React.js', 'Node.js', 'PostgreSQL', 'Docker', 'GitHub Actions', 'SEO Optimization']
   },
   {
-    title: 'Full Stack Developer',
-    company: 'Rhodium Africa Limited',
-    period: 'October 2020 - October 2022',
-    location: 'Nairobi, Kenya',
+    title: 'Full-Stack Web Developer',
+    company: 'Microverse',
+    period: 'May 2022 - December 2022',
+    location: 'Remote',
     description: [
-      'Led comprehensive technology infrastructure migration for digital tourism marketing across East Africa',
-      'Developed and managed lead generation systems converting tourism inquiries into qualified sales opportunities',
-      'Implemented integration solutions connecting booking platforms with enterprise CRM systems',
-      'Collaborated with marketing teams to optimize conversion funnels and user experience flows'
-    ],
-    achievements: [
-      'Increased sales lead generation by 35% through optimized conversion funnels and user experience enhancements',
-      'Successfully migrated legacy systems with zero downtime across multiple business units',
-      'Improved customer onboarding efficiency by 60% through automation and streamlined workflows',
-      'Achieved 25% improvement in platform performance through infrastructure optimization'
-    ],
-    technologies: ['WordPress/WooCommerce', 'PHP', 'MySQL', 'JavaScript', 'Digital Marketing Tools']
-  },
-  {
-    title: 'Junior Web Developer',
-    company: 'Rhodium Africa Limited',
-    period: 'January 2019 - September 2020',
-    location: 'Nairobi, Kenya',
-    description: [
-      'Developed and maintained WordPress-based tourism and digital marketing websites',
-      'Collaborated on digital marketing campaigns including social media and email marketing automation',
-      'Supported customer acquisition initiatives through website optimization and conversion rate improvements',
-      'Gained foundational experience in project management and client communication'
-    ],
-    achievements: [
-      'Contributed to 15% increase in website traffic through SEO optimization and content management',
-      'Successfully delivered 12+ website projects on time and within budget constraints',
-      'Developed proficiency in multiple CMS platforms and digital marketing tools',
+      'Completed 1300+ hours of intensive full-stack training while mastering remote collaboration with international development teams',
+      'Developed expertise in algorithms, data structures, and modern web technologies through project-based learning',
+      'Gained proficiency in remote pair programming using GitHub, GitFlow, and daily standups',
       'Built strong foundation in full-stack development principles and practices'
     ],
-    technologies: ['WordPress', 'PHP', 'HTML/CSS', 'JavaScript', 'MySQL', 'SEO Tools']
+    achievements: [
+      'Successfully completed comprehensive full-stack web development program',
+      'Mastered remote collaboration with international development teams',
+      'Developed proficiency in modern web technologies and best practices',
+      'Built strong foundation in algorithms, data structures, and development methodologies'
+    ],
+    technologies: ['JavaScript', 'React', 'Ruby on Rails', 'PostgreSQL', 'Git', 'Remote Collaboration']
+  },
+  {
+    title: 'Technical Mentor (Volunteer)',
+    company: 'Microverse',
+    period: 'August 2022 - Present',
+    location: 'Remote',
+    description: [
+      'Provide technical guidance and career mentoring to aspiring developers from diverse international backgrounds',
+      'Conduct weekly code reviews and problem-solving sessions for complex coding challenges',
+      'Facilitate remote collaboration training based on real-world experience managing distributed technical teams',
+      'Support international student development and career advancement'
+    ],
+    achievements: [
+      'Successfully mentored three students to secure their first developer roles',
+      'Established effective remote mentoring protocols and best practices',
+      'Contributed to international developer community growth and knowledge sharing',
+      'Applied real-world team management experience to educational mentoring'
+    ],
+    technologies: ['Technical Mentoring', 'Code Review', 'Career Guidance', 'Remote Collaboration']
   }
 ];
 
@@ -234,12 +234,12 @@ export default function About() {
 
           <div className="grid-executive">
             {leadershipMetrics.map((metric, index) => (
-              <MetricCard key={index} className="card-metric">
+              <Card key={index} className="card-metric">
                 <div className="text-4xl mb-4">{metric.icon}</div>
                 <div className="metric-value">{metric.value}</div>
                 <div className="metric-label">{metric.label}</div>
                 <div className="metric-description">{metric.description}</div>
-              </MetricCard>
+              </Card>
             ))}
           </div>
         </div>

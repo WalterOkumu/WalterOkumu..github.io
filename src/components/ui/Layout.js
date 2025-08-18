@@ -1,59 +1,43 @@
 'use client';
 
 import { Navigation } from './Navigation';
-import { cn } from '@/lib/utils';
-import { ENV } from '@/lib/env';
 
 /**
- * Executive Portfolio Layout Component - Design System 2.0
- * Sophisticated Minimalism + Technical Excellence
- * WCAG 2.1 AAA Compliant | SSR-First Architecture
+ * Modern Portfolio Layout Component
+ * Clean, responsive design with working navigation and footer
  */
 const Layout = ({
   children,
   className = '',
   showNavigation = true,
   showFooter = true,
-  fixedNavigation = false,
-  maxWidth = 'executive',
   padding = true,
 }) => {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900 flex flex-col">
-      {/* Skip to content link - WCAG 2.1 AAA compliant */}
+    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col">
+      {/* Skip to content link - Accessibility */}
       <a
         href="#main"
-        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-skip-link bg-interactive-primary text-white px-md py-sm rounded-lg font-semibold transition-all duration-200 min-w-[200px] text-center shadow-xl"
+        className="skip-link"
       >
         Skip to main content
       </a>
 
-      {/* Header with Navigation - single semantic header landmark */}
+      {/* Header with Navigation */}
       {showNavigation && (
         <header role="banner" className="w-full">
-          <Navigation fixed={fixedNavigation} />
+          <Navigation />
         </header>
       )}
 
-      {/* Main Content - single semantic main landmark */}
+      {/* Main Content */}
       <main
         id="main"
-        className={cn([
-          'flex-1 w-full',
-          fixedNavigation && 'pt-16',
-          className,
-        ])}
+        className={`flex-1 w-full ${className}`}
         role="main"
       >
         {padding ? (
-          <div className={cn([
-            // Container classes from design system
-            maxWidth === 'executive' && 'container',
-            maxWidth === 'wide' && 'container-lg',
-            maxWidth === 'narrow' && 'container-md',
-            maxWidth === 'content' && 'container-sm',
-            maxWidth === 'full' && 'w-full',
-          ])}>
+          <div className="container">
             {children}
           </div>
         ) : (
@@ -68,8 +52,8 @@ const Layout = ({
 };
 
 /**
- * Executive Footer Component - Design System 2.0
- * Professional presentation with WCAG 2.1 AAA compliance
+ * Modern Footer Component
+ * Professional presentation with working links and proper structure
  */
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -79,13 +63,13 @@ const Footer = () => {
     professional: [
       {
         name: 'LinkedIn',
-        href: ENV.LINKEDIN_URL,
+        href: 'https://linkedin.com/in/walter-okumu',
         external: true,
         description: 'Professional profile and network'
       },
       {
         name: 'GitHub',
-        href: ENV.GITHUB_URL,
+        href: 'https://github.com/walterokumu',
         external: true,
         description: 'Technical projects and contributions'
       },
@@ -107,41 +91,38 @@ const Footer = () => {
   };
 
   return (
-    <footer
-      className="section-fullwidth bg-color-neutral-900 text-white border-t border-neutral-800"
-      role="contentinfo"
-    >
-      <div className="section-content py-3xl">
-        <div className="grid-executive">
+    <footer className="footer" role="contentinfo">
+      <div className="footer-content">
+        <div className="footer-grid">
           {/* Executive Brand Section */}
-          <div className="space-y-leadership">
-            <div className="flex items-center gap-md mb-lg">
-              <div className="w-12 h-12 bg-gradient-executive rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
+          <div className="space-y-4">
+            <div className="footer-brand">
+              <div className="footer-logo">
                 WO
               </div>
               <div>
-                <h3 className="heading-tertiary text-white mb-0">
+                <h3 className="text-xl font-semibold text-white mb-1">
                   Walter Okumu Oriaro
                 </h3>
-                <p className="text-leadership text-neutral-300">
+                <p className="text-gray-300 text-sm">
                   Head of Customer Success & Technical Architecture
                 </p>
               </div>
             </div>
-            
-            <p className="text-executive text-neutral-200 max-w-prose">
-              AI-driven technology executive leading international digital transformation across 7 countries. 
-              Managing 12-person global teams while delivering measurable AI-powered business outcomes 
+
+            <p className="text-gray-300 max-w-md">
+              Technology executive leading customer success operations and technical architecture across 7 countries.
+              Managing 12-person global teams while delivering measurable business outcomes
               and technical excellence.
             </p>
 
-            {/* Professional Links with enhanced accessibility */}
-            <div className="flex gap-sm pt-lg">
+            {/* Professional Links */}
+            <div className="flex gap-3 pt-4">
               {footerLinks.professional.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="btn-glass interactive-element magnetic-element focus-ring p-md rounded-lg"
+                  className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-200"
                   {...(link.external && {
                     target: '_blank',
                     rel: 'noopener noreferrer',
@@ -157,16 +138,16 @@ const Footer = () => {
 
           {/* Portfolio Navigation */}
           <div>
-            <h4 className="heading-tertiary text-white mb-lg">
+            <h4 className="footer-section">
               Portfolio
             </h4>
             <nav aria-label="Portfolio navigation">
-              <ul className="space-y-component">
+              <ul className="footer-links">
                 {footerLinks.portfolio.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-neutral-300 hover:text-white transition-colors duration-200 focus-ring interactive-element p-xs rounded-md block"
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
                       aria-label={`${link.name}: ${link.description}`}
                     >
                       {link.name}
@@ -179,16 +160,16 @@ const Footer = () => {
 
           {/* Content Links */}
           <div>
-            <h4 className="heading-tertiary text-white mb-lg">
+            <h4 className="footer-section">
               Content
             </h4>
             <nav aria-label="Content navigation">
-              <ul className="space-y-component">
+              <ul className="footer-links">
                 {footerLinks.content.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-neutral-300 hover:text-white transition-colors duration-200 focus-ring interactive-element p-xs rounded-md block"
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
                       aria-label={`${link.name}: ${link.description}`}
                     >
                       {link.name}
@@ -201,16 +182,16 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="heading-tertiary text-white mb-lg">
+            <h4 className="footer-section">
               Legal
             </h4>
             <nav aria-label="Legal navigation">
-              <ul className="space-y-component">
+              <ul className="footer-links">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-neutral-300 hover:text-white transition-colors duration-200 focus-ring interactive-element p-xs rounded-md block"
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
                       aria-label={`${link.name}: ${link.description}`}
                     >
                       {link.name}
@@ -222,23 +203,21 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom - Executive Signature */}
-        <div className="mt-3xl pt-xl border-t border-neutral-700">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-md">
-            <div className="text-metrics text-neutral-400">
-              <p>&copy; {currentYear} Walter Okumu Oriaro. All rights reserved.</p>
-              <p className="mt-xs">
-                Executive Portfolio | Nairobi, Kenya | Available for global opportunities
-              </p>
-            </div>
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <div className="text-gray-400 text-sm">
+            <p>&copy; {currentYear} Walter Okumu Oriaro. All rights reserved.</p>
+            <p className="mt-1">
+              Head of Customer Success & Technical Architecture | Nairobi, Kenya | Available for global opportunities
+            </p>
+          </div>
 
-            <div className="flex items-center gap-sm text-metrics text-neutral-500">
-              <span>Built with Next.js 15</span>
-              <span className="w-1 h-1 bg-current rounded-full" />
-              <span>Design System 2.0</span>
-              <span className="w-1 h-1 bg-current rounded-full" />
-              <span>WCAG 2.1 AAA</span>
-            </div>
+          <div className="flex items-center gap-4 text-gray-500 text-sm">
+            <span>Built with Next.js 15</span>
+            <span className="w-1 h-1 bg-current rounded-full" />
+            <span>Modern Design System</span>
+            <span className="w-1 h-1 bg-current rounded-full" />
+            <span>Dark/Light Mode</span>
           </div>
         </div>
       </div>
@@ -247,20 +226,20 @@ const Footer = () => {
 };
 
 /**
- * Executive Social Icon Component
+ * Social Icon Component
  * Optimized for accessibility and professional presentation
  */
 const SocialIcon = ({ name }) => {
-  const iconClass = "w-6 h-6";
+  const iconClass = "w-5 h-5";
 
   switch (name) {
     case 'LinkedIn':
       return (
-        <svg 
-          className={iconClass} 
-          fill="currentColor" 
-          viewBox="0 0 24 24" 
-          aria-hidden="true" 
+        <svg
+          className={iconClass}
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
           role="img"
         >
           <title>LinkedIn professional profile</title>
@@ -269,11 +248,11 @@ const SocialIcon = ({ name }) => {
       );
     case 'GitHub':
       return (
-        <svg 
-          className={iconClass} 
-          fill="currentColor" 
-          viewBox="0 0 24 24" 
-          aria-hidden="true" 
+        <svg
+          className={iconClass}
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
           role="img"
         >
           <title>GitHub technical projects and contributions</title>

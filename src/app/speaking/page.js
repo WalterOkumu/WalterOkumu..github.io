@@ -2,19 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Calendar, Clock, Mail, Bell, Sparkles, 
+import {
+  Calendar, Clock, Mail, Bell, Sparkles,
   Mic, Users, Globe, ArrowRight, Star,
   CheckCircle, Play, MapPin, Award
 } from 'lucide-react';
 import Layout from '@/components/ui/Layout';
 import Button from '@/components/ui/Button';
-import { 
-  MotionDiv, 
-  StaggerContainer, 
-  StaggerItem, 
+import {
+  MotionDiv,
+  StaggerContainer,
+  StaggerItem,
   FloatingElement,
-  animationVariants 
+  animationVariants
 } from '@/components/ui/motion/AnimationComponents';
 
 // Metadata is handled by the Layout component for client components
@@ -34,11 +34,11 @@ export default function Speaking() {
   useEffect(() => {
     const targetDate = new Date();
     targetDate.setMonth(targetDate.getMonth() + 3);
-    
+
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate.getTime() - now;
-      
+
       if (distance > 0) {
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
@@ -80,26 +80,26 @@ export default function Speaking() {
       <section className="section-hero relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <motion.div 
+          <motion.div
             className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/90 dark:via-purple-950/90 dark:to-pink-950/90"
             style={{
               transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30}px)`
             }}
           />
-          
+
           {/* Floating Elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <FloatingElement 
+            <FloatingElement
               className="absolute top-1/4 left-1/4 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl"
               amplitude={40}
               duration={6}
             />
-            <FloatingElement 
+            <FloatingElement
               className="absolute top-3/4 right-1/4 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"
               amplitude={35}
               duration={7}
             />
-            <FloatingElement 
+            <FloatingElement
               className="absolute top-1/2 right-1/3 w-24 h-24 bg-pink-500/10 rounded-full blur-2xl"
               amplitude={30}
               duration={5}
@@ -111,14 +111,14 @@ export default function Speaking() {
         </div>
 
         <div className="relative container-standard z-10">
-          <MotionDiv 
+          <MotionDiv
             className="text-center space-y-8 max-w-5xl mx-auto"
             variants={animationVariants.fadeInUp}
             initial="initial"
             animate="animate"
           >
             {/* Coming Soon Badge */}
-            <motion.div 
+            <motion.div
               className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-semibold border border-indigo-200/50 dark:border-indigo-800/50 backdrop-blur-sm"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -130,7 +130,7 @@ export default function Speaking() {
             </motion.div>
 
             {/* Main Heading */}
-            <motion.div 
+            <motion.div
               className="space-y-6"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -147,15 +147,15 @@ export default function Speaking() {
               </h1>
 
               <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
-                Get ready for an immersive speaking platform featuring cutting-edge insights on 
-                <span className="font-semibold text-indigo-600 dark:text-indigo-400"> technical leadership</span>, 
-                <span className="font-semibold text-purple-600 dark:text-purple-400"> customer success</span>, and 
+                Get ready for an immersive speaking platform featuring cutting-edge insights on
+                <span className="font-semibold text-indigo-600 dark:text-indigo-400"> technical leadership</span>,
+                <span className="font-semibold text-purple-600 dark:text-purple-400"> customer success</span>, and
                 <span className="font-semibold text-pink-600 dark:text-pink-400"> international team management</span>.
               </p>
             </motion.div>
 
             {/* Countdown Timer */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -168,7 +168,7 @@ export default function Speaking() {
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-indigo-600 to-purple-600 bg-clip-text text-transparent"
                     key={value}
                     initial={{ y: -20, opacity: 0 }}
@@ -203,42 +203,42 @@ export default function Speaking() {
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { 
-                icon: Mic, 
-                number: '25+', 
+              {
+                icon: Mic,
+                number: '25+',
                 label: 'Speaking Topics',
                 description: 'Curated presentations',
                 color: 'indigo'
               },
-              { 
-                icon: Globe, 
-                number: '7', 
+              {
+                icon: Globe,
+                number: '7',
                 label: 'Countries',
                 description: 'International experience',
                 color: 'purple'
               },
-              { 
-                icon: Users, 
-                number: '5K+', 
+              {
+                icon: Users,
+                number: '5K+',
                 label: 'Expected Audience',
                 description: 'Global reach',
                 color: 'pink'
               },
-              { 
-                icon: Award, 
-                number: '12+', 
+              {
+                icon: Award,
+                number: '12+',
                 label: 'Years Experience',
                 description: 'Leadership expertise',
                 color: 'emerald'
               }
             ].map((stat, index) => (
               <StaggerItem key={index}>
-                <motion.div 
+                <motion.div
                   className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50 shadow-lg text-center group"
                   whileHover={{ y: -10, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-${stat.color}-100 to-${stat.color}-200 dark:from-${stat.color}-900/30 dark:to-${stat.color}-800/30 mb-6`}
                     whileHover={{ rotate: 10 }}
                     transition={{ duration: 0.2 }}
@@ -264,19 +264,19 @@ export default function Speaking() {
       {/* Email Subscription */}
       <section className="section-primary bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
-        <FloatingElement 
+        <FloatingElement
           className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"
           amplitude={20}
           duration={8}
         />
-        <FloatingElement 
+        <FloatingElement
           className="absolute bottom-10 left-10 w-24 h-24 bg-white/10 rounded-full blur-xl"
           amplitude={25}
           duration={6}
         />
-        
+
         <div className="container-standard relative z-10">
-          <MotionDiv 
+          <MotionDiv
             className="text-center max-w-3xl mx-auto"
             variants={animationVariants.fadeInUp}
             initial="initial"
@@ -292,16 +292,16 @@ export default function Speaking() {
               <Bell className="w-6 h-6 animate-bounce" />
               <span className="text-lg font-semibold">Be the First to Know</span>
             </motion.div>
-            
+
             <h2 className="text-3xl lg:text-5xl font-bold mb-6">
               Join the VIP List
             </h2>
             <p className="text-xl mb-8 opacity-90 leading-relaxed">
-              Get exclusive early access to speaking schedules, presentation materials, and 
+              Get exclusive early access to speaking schedules, presentation materials, and
               behind-the-scenes insights from international leadership experiences.
             </p>
 
-            <motion.form 
+            <motion.form
               onSubmit={handleSubscribe}
               className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8"
               initial={{ y: 30, opacity: 0 }}
@@ -385,7 +385,7 @@ export default function Speaking() {
               {
                 icon: Calendar,
                 title: 'Smart Scheduling',
-                description: 'AI-powered speaking calendar that automatically coordinates across multiple time zones.',
+                description: 'Advanced speaking calendar that automatically coordinates across multiple time zones.',
                 color: 'emerald'
               },
               {
@@ -414,12 +414,12 @@ export default function Speaking() {
               }
             ].map((feature, index) => (
               <StaggerItem key={index}>
-                <motion.div 
+                <motion.div
                   className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700 h-full"
                   whileHover={{ y: -5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-${feature.color}-100 dark:bg-${feature.color}-900/30 mb-6`}
                     whileHover={{ rotate: 10 }}
                   >
@@ -441,7 +441,7 @@ export default function Speaking() {
       {/* CTA Section */}
       <section className="section-primary bg-white dark:bg-gray-900">
         <div className="container-standard text-center">
-          <MotionDiv 
+          <MotionDiv
             className="max-w-3xl mx-auto space-y-8"
             variants={animationVariants.fadeInUp}
             initial="initial"
@@ -454,7 +454,7 @@ export default function Speaking() {
             <p className="text-xl text-gray-600 dark:text-gray-400">
               Join thousands of professionals waiting for the future of thought leadership and speaking excellence.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button

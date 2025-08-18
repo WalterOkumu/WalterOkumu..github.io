@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { trackExecutiveEngagement } from '@/lib/executive-analytics';
-import { 
+import {
   Brain,
   Code,
   Users,
@@ -25,7 +25,7 @@ import {
  * Executive Skills Matrix Component
  * Interactive visualization of executive competencies and technical expertise
  */
-const ExecutiveSkillsMatrix = ({ 
+const ExecutiveSkillsMatrix = ({
   className = '',
   variant = 'executive',
   interactive = true,
@@ -58,7 +58,7 @@ const ExecutiveSkillsMatrix = ({
           level: 90,
           experience: '4+ years',
           description: 'Long-term strategy development and execution for multi-million dollar initiatives',
-          achievements: ['$2.3M revenue impact', '7-country expansion strategy', 'Digital transformation roadmap'],
+          achievements: ['40% customer satisfaction improvement', '7-country expansion strategy', 'Digital transformation roadmap'],
           tools: ['OKRs', 'Strategic Planning', 'Executive Reporting']
         },
         {
@@ -80,21 +80,21 @@ const ExecutiveSkillsMatrix = ({
       ]
     },
     ai_technology: {
-      title: 'AI & Machine Learning',
+              title: 'Technical Infrastructure & Operations',
       icon: Brain,
       color: 'accent',
-      description: 'Chief AI Officer expertise with ML implementation and AI strategy',
+              description: 'Head of Customer Success expertise with technical implementation and customer success strategy',
       skills: [
         {
           name: 'AI Strategy & Implementation',
           level: 88,
           experience: '3+ years',
-          description: 'Chief AI Officer responsibilities with enterprise ML deployment',
-          achievements: ['$2.3M AI revenue impact', 'ML customer success automation', '99.2% system reliability'],
+          description: 'Head of Customer Success responsibilities with enterprise technical infrastructure deployment',
+          achievements: ['78% deployment error reduction', 'Technical infrastructure automation', '99.8% system reliability'],
           tools: ['TensorFlow', 'PyTorch', 'MLOps', 'AI Ethics']
         },
         {
-          name: 'Machine Learning Operations',
+          name: 'Technical Operations & Infrastructure',
           level: 85,
           experience: '2+ years',
           description: 'MLOps pipelines and automated AI system deployment',
@@ -178,7 +178,7 @@ const ExecutiveSkillsMatrix = ({
           level: 85,
           experience: '3+ years',
           description: 'Revenue optimization and business intelligence systems',
-          achievements: ['$2.3M revenue impact', 'Predictive revenue modeling', 'Financial reporting automation'],
+          achievements: ['23% upsell revenue growth', 'Customer success metrics', 'Financial reporting automation'],
           tools: ['Revenue Analytics', 'Financial Modeling', 'Business Intelligence']
         },
         {
@@ -204,13 +204,13 @@ const ExecutiveSkillsMatrix = ({
   // Handle category selection
   const handleCategorySelect = (categoryKey) => {
     if (!interactive) return;
-    
+
     setActiveCategory(categoryKey);
     setSelectedSkill(null);
-    
+
     trackExecutiveEngagement.skillsExploration(
-      categoryKey, 
-      'category_selection', 
+      categoryKey,
+      'category_selection',
       'overview'
     );
   };
@@ -218,7 +218,7 @@ const ExecutiveSkillsMatrix = ({
   // Handle skill interaction
   const handleSkillInteraction = (skill, action) => {
     if (!interactive) return;
-    
+
     if (action === 'click') {
       setSelectedSkill(selectedSkill === skill.name ? null : skill.name);
     } else if (action === 'hover') {
@@ -275,7 +275,7 @@ const ExecutiveSkillsMatrix = ({
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={cn(
         'executive-skills-matrix',
@@ -294,7 +294,7 @@ const ExecutiveSkillsMatrix = ({
           Executive Competency Matrix
         </h2>
         <p className="text-executive text-neutral-700 dark:text-neutral-300 max-w-3xl mx-auto">
-          Comprehensive skill assessment across leadership, AI strategy, technical architecture, 
+          Comprehensive skill assessment across leadership, AI strategy, technical architecture,
           and business operations with quantified expertise levels and measurable achievements.
         </p>
       </motion.div>
@@ -309,14 +309,14 @@ const ExecutiveSkillsMatrix = ({
         {Object.entries(skillsData).map(([key, category]) => {
           const Icon = category.icon;
           const isActive = activeCategory === key;
-          
+
           return (
             <motion.button
               key={key}
               className={cn(
                 'flex items-center gap-3 px-6 py-4 rounded-xl transition-all duration-300',
                 'border-2 font-medium',
-                isActive 
+                isActive
                   ? `bg-${category.color}-500 text-white border-${category.color}-500 shadow-lg shadow-${category.color}-500/20`
                   : `border-${category.color}-200 text-${category.color}-700 hover:bg-${category.color}-50`,
                 interactive && 'cursor-pointer'

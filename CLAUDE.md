@@ -177,3 +177,7 @@ npm run lint        # Run ESLint with Next.js core-web-vitals config
 - Custom tracking for portfolio engagement metrics
 
 This system is designed for Walter Oriaro's executive portfolio showcasing international leadership, technical expertise, and customer success achievements across multiple countries and digital properties.
+
+## Task Master AI Instructions
+**Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
+@./.taskmaster/CLAUDE.md

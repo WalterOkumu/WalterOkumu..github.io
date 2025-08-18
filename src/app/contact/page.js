@@ -1,23 +1,23 @@
 import Layout from '@/components/ui/Layout';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, MetricCard } from '@/components/ui/Card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import ContactForm from '@/components/ui/Form';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import { Mail, Phone, MapPin, Calendar, Clock, Users, Globe, ExternalLink } from 'lucide-react';
 
 export const metadata = {
-  title: 'Contact Walter Oriaro - Chief AI Officer | $2.3M AI Revenue Impact Leader',
-  description: 'Schedule consultation with Chief AI Officer Walter Oriaro. Leading AI transformation across 7 countries with $2.3M revenue impact. Available for C-level AI strategy, executive opportunities, and AI transformation consulting. Priority response for CAIO/CTO roles.',
+  title: 'Contact Walter Oriaro - Head of Customer Success & Technical Architecture | Customer Success Leader',
+  description: 'Schedule consultation with Head of Customer Success & Technical Architecture Walter Oriaro. Leading customer success operations across 7 countries with 40% customer satisfaction improvement. Available for executive opportunities, customer success strategy, and technical architecture consulting.',
   keywords: [
-    'Contact Walter Oriaro', 'Chief AI Officer Contact', 'AI Strategy Consultation', 'CAIO Executive',
-    'AI Transformation Leader', 'ML Leadership Consulting', 'International AI Executive',
-    'AI Strategy Executive', 'Chief AI Officer Hire', 'AI Revenue Impact Leader',
-    'Executive AI Consultation', 'C-Level AI Strategy', 'AI Leadership Speaking',
-    'Chief AI Officer Opportunities', 'AI Executive Search', 'ML Strategy Consultant'
+    'Contact Walter Oriaro', 'Head of Customer Success Contact', 'Customer Success Strategy Consultation', 'Customer Success Executive',
+    'Technical Architecture Leader', 'Customer Success Consulting', 'International Customer Success Executive',
+    'Customer Success Strategy Executive', 'Head of Customer Success Hire', 'Customer Success Improvement Leader',
+    'Executive Customer Success Consultation', 'C-Level Customer Success Strategy', 'Customer Success Leadership Speaking',
+    'Head of Customer Success Opportunities', 'Customer Success Executive Search', 'Customer Success Strategy Consultant'
   ],
   openGraph: {
-    title: 'Contact Walter Oriaro - Chief AI Officer | AI Strategy Leadership',
-    description: 'Chief AI Officer with $2.3M revenue impact. Schedule consultation for AI transformation strategy and international AI team leadership.',
+    title: 'Contact Walter Oriaro - Head of Customer Success & Technical Architecture | Customer Success Strategy Leadership',
+    description: 'Head of Customer Success & Technical Architecture with 40% customer satisfaction improvement. Schedule consultation for customer success strategy and international team leadership.',
     type: 'website',
     images: [
       {
@@ -203,12 +203,12 @@ export default function Contact() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 {communicationMetrics.map((metric, index) => (
-                  <MetricCard key={index} className="card-metric">
+                  <Card key={index} className="card-metric">
                     <div className="text-2xl mb-2">{metric.icon}</div>
                     <div className="metric-value text-2xl">{metric.value}</div>
                     <div className="metric-label text-xs">{metric.label}</div>
                     <div className="metric-description text-xs">{metric.description}</div>
-                  </MetricCard>
+                  </Card>
                 ))}
               </div>
             </div>
@@ -435,7 +435,7 @@ export default function Contact() {
                 </div>
               </div>
               <blockquote className="text-executive italic border-l-4 border-primary-200 pl-lg">
-                &ldquo;Walter&rsquo;s leadership in managing our international technical architecture has been transformational. 
+                &ldquo;Walter&rsquo;s leadership in managing our international technical architecture has been transformational.
                 His ability to coordinate teams across 7 countries while delivering 78% error reduction is exceptional.&rdquo;
               </blockquote>
             </div>
@@ -451,7 +451,7 @@ export default function Contact() {
                 </div>
               </div>
               <blockquote className="text-executive italic border-l-4 border-success-200 pl-lg">
-                &ldquo;Under Walter&rsquo;s customer success leadership, we achieved 40% satisfaction improvement. 
+                &ldquo;Under Walter&rsquo;s customer success leadership, we achieved 40% satisfaction improvement.
                 His strategic approach to international team coordination sets him apart as an executive leader.&rdquo;
               </blockquote>
             </div>
@@ -467,7 +467,7 @@ export default function Contact() {
                 </div>
               </div>
               <blockquote className="text-executive italic border-l-4 border-warning-200 pl-lg">
-                &ldquo;Walter&rsquo;s technical architecture decisions and CI/CD implementation have been game-changing. 
+                &ldquo;Walter&rsquo;s technical architecture decisions and CI/CD implementation have been game-changing.
                 His executive vision combined with hands-on expertise drives real business results.&rdquo;
               </blockquote>
             </div>

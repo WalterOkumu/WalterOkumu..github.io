@@ -11,33 +11,33 @@ export default function ProjectsClient({ projects, categories }) {
   const [selectedProject, setSelectedProject] = useState(null);
   const modalRef = useRef(null);
   const previousFocusRef = useRef(null);
-  
+
   // Focus management for modal
   useEffect(() => {
     if (selectedProject) {
       // Store the previously focused element
       previousFocusRef.current = document.activeElement;
-      
+
       // Focus the modal when it opens
       setTimeout(() => {
         if (modalRef.current) {
           modalRef.current.focus();
         }
       }, 100);
-      
+
       // Trap focus within modal
       const handleKeyDown = (e) => {
         if (e.key === 'Escape') {
           setSelectedProject(null);
         }
-        
+
         if (e.key === 'Tab' && modalRef.current) {
           const focusableElements = modalRef.current.querySelectorAll(
             'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
           );
           const firstElement = focusableElements[0];
           const lastElement = focusableElements[focusableElements.length - 1];
-          
+
           if (e.shiftKey) {
             if (document.activeElement === firstElement) {
               lastElement.focus();
@@ -51,10 +51,10 @@ export default function ProjectsClient({ projects, categories }) {
           }
         }
       };
-      
+
       document.addEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'hidden';
-      
+
       return () => {
         document.removeEventListener('keydown', handleKeyDown);
         document.body.style.overflow = 'unset';
@@ -65,15 +65,15 @@ export default function ProjectsClient({ projects, categories }) {
     }
   }, [selectedProject]);
 
-  const filteredProjects = selectedCategory === 'All Projects' 
-    ? projects 
+  const filteredProjects = selectedCategory === 'All Projects'
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   const featuredProjects = projects.filter(project => project.featured);
 
   // If no featured projects are explicitly marked, show first 3 projects
-  const displayedFeatured = featuredProjects.length > 0 
-    ? featuredProjects 
+  const displayedFeatured = featuredProjects.length > 0
+    ? featuredProjects
     : projects.slice(0, 3).map(p => ({ ...p, featured: true }));
 
   return (
@@ -89,10 +89,10 @@ export default function ProjectsClient({ projects, categories }) {
               Detailed analysis of high-impact projects demonstrating technical leadership and customer success management
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {displayedFeatured.map((project) => (
-              <Card 
+              <Card
                 key={project.id}
                 className="overflow-hidden cursor-pointer hover:shadow-lg hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                 onClick={() => setSelectedProject(project)}
@@ -158,10 +158,10 @@ export default function ProjectsClient({ projects, categories }) {
               International Digital Properties
             </h2>
             <p className="text-executive max-w-3xl mx-auto mb-8">
-              Browse 15+ projects by category to explore technical leadership, customer success management, 
-              and AI-driven business transformation across 7 countries.
+              Browse 15+ projects by category to explore technical leadership, customer success management,
+                              and technical transformation across 7 countries.
             </p>
-            
+
             {/* Category Filters */}
             <div className="flex flex-wrap justify-center gap-2">
               {categories.map((category) => (
@@ -177,12 +177,12 @@ export default function ProjectsClient({ projects, categories }) {
               ))}
             </div>
           </div>
-          
+
           {/* Projects Grid */}
           <div className="grid-leadership">
             {filteredProjects.map((project) => (
-              <Card 
-                key={project.id} 
+              <Card
+                key={project.id}
                 className="card-glass cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-color-primary-500 focus:ring-offset-2"
                 onClick={() => setSelectedProject(project)}
                 onKeyDown={(e) => {
@@ -229,11 +229,11 @@ export default function ProjectsClient({ projects, categories }) {
                       </Badge>
                     )}
                   </div>
-                  {project.aiImpact && (
+                  {project.technicalImpact && (
                     <div className="pt-2 border-t border-color-neutral-200">
                       <Badge variant="success" className="text-xs">
                         <TrendingUp className="w-3 h-3 mr-1" />
-                        AI Enhanced
+                        Technically Enhanced
                       </Badge>
                     </div>
                   )}
@@ -246,7 +246,7 @@ export default function ProjectsClient({ projects, categories }) {
 
       {/* Enhanced Project Detail Modal */}
       {selectedProject && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
@@ -257,7 +257,7 @@ export default function ProjectsClient({ projects, categories }) {
             }
           }}
         >
-          <div 
+          <div
             ref={modalRef}
             className="bg-white rounded-xl max-w-5xl w-full max-h-[85vh] overflow-y-auto shadow-2xl"
             tabIndex="-1"
@@ -275,8 +275,8 @@ export default function ProjectsClient({ projects, categories }) {
                     </Badge>
                   )}
                 </div>
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   size="sm"
                   onClick={() => setSelectedProject(null)}
                   aria-label="Close project details"
@@ -284,7 +284,7 @@ export default function ProjectsClient({ projects, categories }) {
                   <X className="w-5 h-5" />
                 </Button>
               </div>
-              <h2 
+              <h2
                 id="modal-title"
                 className="heading-primary mb-2"
               >
@@ -335,7 +335,7 @@ export default function ProjectsClient({ projects, categories }) {
                   </p>
                 </div>
               </div>
-              
+
               {/* Key Results */}
               <div className="mb-8">
                 <h3 className="heading-card mb-4">Measurable Business Results</h3>
@@ -354,16 +354,16 @@ export default function ProjectsClient({ projects, categories }) {
                 </div>
               </div>
 
-              {/* AI Impact */}
-              {selectedProject.aiImpact && (
+              {/* Technical Impact */}
+              {selectedProject.technicalImpact && (
                 <div className="mb-8 p-6 bg-gradient-to-r from-color-primary-50 to-color-success-50 rounded-lg">
-                  <h3 className="heading-card mb-3">AI Leadership Impact</h3>
+                  <h3 className="heading-card mb-3">Technical Leadership Impact</h3>
                   <p className="text-sm text-color-primary-700 leading-relaxed">
-                    {selectedProject.aiImpact}
+                    {selectedProject.technicalImpact}
                   </p>
                 </div>
               )}
-              
+
               {/* Technologies & Role */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>

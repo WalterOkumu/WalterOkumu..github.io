@@ -79,7 +79,7 @@ export const getOptimizedImageProps = (
 ) => {
   const config = imageOptimization[category];
   const sizeConfig = config.sizes[size];
-  
+
   return {
     src,
     alt,
@@ -102,52 +102,52 @@ export const getOptimizedImageProps = (
 export const executiveImages = {
   hero: {
     src: '/walter-okumu.webp',
-    alt: 'Walter Oriaro - Chief AI Officer and International Technology Executive',
+    alt: 'Walter Oriaro - Head of Customer Success & Technical Architecture | 40% Customer Satisfaction Improvement',
     credit: 'Professional executive portrait',
     seo: {
       title: 'Walter Oriaro Executive Portrait',
-      description: 'Chief AI Officer Walter Oriaro - AI Strategy Leadership across 7 countries'
+              description: 'Head of Customer Success & Technical Architecture Walter Oriaro - Customer Success Strategy Leadership across 7 countries'
     }
   },
   openGraph: {
     default: {
       src: '/og-image.jpg',
-      alt: 'Walter Oriaro - Chief AI Officer | $2.3M AI Revenue Impact',
-      title: 'Chief AI Officer',
-      subtitle: '$2.3M Revenue Impact • 7 Countries • 280% ML Performance'
+              alt: 'Walter Oriaro - Head of Customer Success & Technical Architecture | 40% Customer Satisfaction Improvement',
+        title: 'Head of Customer Success & Technical Architecture',
+      subtitle: '40% Customer Satisfaction • 7 Countries • 78% Error Reduction'
     },
     contact: {
-      src: '/og-contact.jpg', 
-      alt: 'Contact Walter Oriaro - Chief AI Officer Consultation',
-      title: 'Schedule AI Strategy Consultation',
-      subtitle: 'Chief AI Officer • International Leadership • 24hr Response'
+      src: '/og-contact.jpg',
+      alt: 'Contact Walter Oriaro - Customer Success & Technical Architecture Consultation',
+      title: 'Schedule Customer Success Strategy Consultation',
+      subtitle: 'Head of Customer Success • International Leadership • 24hr Response'
     }
   },
   projects: [
     {
       id: 'yellowpages-kenya',
       src: '/projects/yellowpages-kenya.webp',
-      alt: 'Yellow Pages Kenya - AI-Powered Business Directory Platform',
+              alt: 'Yellow Pages Kenya - Advanced Business Directory Platform',
       title: 'AI-Enhanced Business Directory',
       metrics: '50K+ Listings • 99.7% Uptime'
     },
     {
       id: 'ai-transformation',
-      src: '/projects/ai-transformation.webp', 
-      alt: 'AI Transformation Dashboard - $2.3M Revenue Impact',
-      title: 'AI Revenue Transformation',
-      metrics: '$2.3M Impact • 280% Performance'
+      src: '/projects/ai-transformation.webp',
+      alt: 'Technical Transformation Dashboard - 40% Customer Satisfaction Improvement',
+      title: 'Customer Success Transformation',
+      metrics: '40% Satisfaction • 78% Error Reduction'
     }
   ],
   skills: {
     ai: {
       src: '/icons/ai-leadership.svg',
-      alt: 'AI Leadership Icon',
+              alt: 'Technical Leadership Icon',
       category: 'executive'
     },
     technical: {
       src: '/icons/technical-architecture.svg',
-      alt: 'Technical Architecture Icon', 
+      alt: 'Technical Architecture Icon',
       category: 'technical'
     }
   }

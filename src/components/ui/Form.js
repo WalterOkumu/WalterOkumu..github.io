@@ -139,13 +139,13 @@ const Select = forwardRef(({
 const getPriorityLevel = (inquiryType, urgency) => {
   const inquiryPriorities = {
     'caio-opportunity': 'critical',
-    'cto-opportunity': 'critical', 
+    'cto-opportunity': 'critical',
     'ai-strategy-consulting': 'high',
     'ai-team-leadership': 'high',
     'executive-consulting': 'high',
     'board-advisory': 'high'
   };
-  
+
   const basePriority = inquiryPriorities[inquiryType] || 'normal';
   if (urgency === 'urgent') return 'critical';
   if (urgency === 'high' && basePriority !== 'critical') return 'high';
@@ -155,7 +155,7 @@ const getPriorityLevel = (inquiryType, urgency) => {
 const isExecutiveInquiry = (inquiryType) => {
   const executiveTypes = [
     'caio-opportunity',
-    'cto-opportunity', 
+    'cto-opportunity',
     'executive-consulting',
     'board-advisory',
     'ai-strategy-consulting'
@@ -243,7 +243,7 @@ const ContactForm = forwardRef(({
     try {
       // Sanitize the form data before sending
       const sanitizedData = sanitizeFormData(formData);
-      
+
       // Validate sanitized data
       const sanitizationResult = validateSanitizedData(sanitizedData);
       if (!sanitizationResult.isValid) {
@@ -303,17 +303,17 @@ const ContactForm = forwardRef(({
 
   const inquiryTypes = [
     { value: '', label: 'Select inquiry type', priority: 'normal' },
-    { value: 'caio-opportunity', label: 'Chief AI Officer Role', priority: 'urgent', description: 'C-level AI executive positions' },
+            { value: 'customer-success-opportunity', label: 'Head of Customer Success Role', priority: 'urgent', description: 'C-level customer success executive positions' },
     { value: 'cto-opportunity', label: 'CTO/VP Engineering Role', priority: 'urgent', description: 'Senior technology leadership roles' },
     { value: 'ai-strategy-consulting', label: 'AI Strategy Consulting', priority: 'high', description: 'AI transformation and implementation strategy' },
     { value: 'ai-team-leadership', label: 'AI Team Leadership', priority: 'high', description: 'International AI team management and scaling' },
     { value: 'executive-consulting', label: 'Executive Technology Consulting', priority: 'high', description: 'C-level technology advisory services' },
-    { value: 'ml-implementation', label: 'ML/AI Implementation', priority: 'high', description: 'Machine learning operations and deployment' },
-    { value: 'speaking-ai', label: 'AI Leadership Speaking', priority: 'medium', description: 'Conference presentations and keynotes' },
+            { value: 'technical-consulting', label: 'Technical Consulting', priority: 'high', description: 'Technical architecture and infrastructure consulting' },
+            { value: 'speaking-customer-success', label: 'Customer Success Leadership Speaking', priority: 'medium', description: 'Conference presentations and keynotes' },
     { value: 'board-advisory', label: 'Board Advisory Services', priority: 'high', description: 'Technology board advisor and strategic guidance' },
     { value: 'international-expansion', label: 'International Tech Expansion', priority: 'medium', description: 'Global technology team scaling and operations' },
     { value: 'technical-due-diligence', label: 'Technical Due Diligence', priority: 'medium', description: 'Technology assessment for investments' },
-    { value: 'mentoring-caio', label: 'Chief AI Officer Mentoring', priority: 'medium', description: 'AI leadership development and coaching' },
+            { value: 'mentoring-customer-success', label: 'Customer Success Leadership Mentoring', priority: 'medium', description: 'Customer success leadership development and coaching' },
     { value: 'other', label: 'Other Executive Inquiry', priority: 'normal', description: 'General professional inquiries' }
   ];
 
@@ -355,9 +355,9 @@ const ContactForm = forwardRef(({
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
             </svg>
-            Thank you for your inquiry! 
-            {formData.urgency === 'urgent' || formData.inquiryType?.includes('opportunity') 
-              ? "I'll respond within 4 hours for executive opportunities." 
+            Thank you for your inquiry!
+            {formData.urgency === 'urgent' || formData.inquiryType?.includes('opportunity')
+              ? "I'll respond within 4 hours for executive opportunities."
               : `I'll respond within ${process.env.NEXT_PUBLIC_RESPONSE_TIME || '24 hours'}.`
             }
           </p>
@@ -442,8 +442,8 @@ const ContactForm = forwardRef(({
             required
           >
             {inquiryTypes.map(type => (
-              <option 
-                key={type.value} 
+              <option
+                key={type.value}
                 value={type.value}
                 data-priority={type.priority}
                 title={type.description}
@@ -508,7 +508,7 @@ const ContactForm = forwardRef(({
           >
             <option value="">Select budget range (optional)</option>
             <option value="executive-package">Executive Compensation Package ($200K+)</option>
-            <option value="caio-compensation">Chief AI Officer Package ($300K+)</option>
+            <option value="customer-success-compensation">Head of Customer Success Package ($200K+)</option>
             <option value="strategic-consulting">Strategic Consulting ($5K-15K/month)</option>
             <option value="ai-implementation">AI Implementation Project ($25K-100K)</option>
             <option value="advisory-retainer">Advisory Retainer ($3K-10K/month)</option>
@@ -544,7 +544,7 @@ const ContactForm = forwardRef(({
             <option value="">Select referral source (optional)</option>
             <option value="linkedin">LinkedIn</option>
             <option value="github">GitHub</option>
-            <option value="search-caio">Search - Chief AI Officer</option>
+            <option value="search-customer-success">Search - Head of Customer Success</option>
             <option value="search-cto">Search - CTO/Technology Leader</option>
             <option value="professional-referral">Professional Referral</option>
             <option value="conference">Conference/Speaking Event</option>
@@ -564,8 +564,8 @@ const ContactForm = forwardRef(({
           disabled={isSubmitting}
           className="w-full md:w-auto"
         >
-          {isSubmitting 
-            ? 'Routing Executive Inquiry...' 
+          {isSubmitting
+            ? 'Routing Executive Inquiry...'
             : (formData.urgency === 'urgent' || formData.inquiryType?.includes('opportunity')
                 ? 'Send Priority Executive Inquiry'
                 : 'Send Professional Inquiry')

@@ -9,20 +9,20 @@ const RATE_LIMIT_MAX_REQUESTS = 5;
 function rateLimit(identifier) {
   const now = Date.now();
   const windowStart = now - RATE_LIMIT_WINDOW;
-  
+
   if (!rateLimitStore.has(identifier)) {
     rateLimitStore.set(identifier, []);
   }
-  
+
   const requests = rateLimitStore.get(identifier);
   // Clean old requests
   const validRequests = requests.filter(time => time > windowStart);
   rateLimitStore.set(identifier, validRequests);
-  
+
   if (validRequests.length >= RATE_LIMIT_MAX_REQUESTS) {
     return false;
   }
-  
+
   validRequests.push(now);
   return true;
 }
@@ -42,7 +42,7 @@ export async function POST(request) {
     // Get client IP for rate limiting
     const forwarded = request.headers.get('x-forwarded-for');
     const clientIp = forwarded ? forwarded.split(',')[0] : request.headers.get('x-real-ip') || 'unknown';
-    
+
     // Rate limiting
     if (!rateLimit(clientIp)) {
       return NextResponse.json(
@@ -125,10 +125,10 @@ export async function POST(request) {
       }
     });
 
-    // Enhanced email content with AI leadership focus
-    const priorityIndicator = sanitizedData.priority === 'critical' ? '🔴 URGENT - ' : 
+    // Enhanced email content with customer success leadership focus
+    const priorityIndicator = sanitizedData.priority === 'critical' ? '🔴 URGENT - ' :
                              sanitizedData.priority === 'high' ? '🟠 HIGH PRIORITY - ' : '';
-    
+
     const emailContent = `
 ${priorityIndicator}${sanitizedData.isExecutiveInquiry ? 'EXECUTIVE INQUIRY' : 'Professional Inquiry'} from Walter Oriaro Portfolio
 
@@ -154,7 +154,7 @@ Immediate Response Required: ${sanitizedData.requiresImmedateResponse ? 'YES - W
 ${sanitizedData.message}
 
 === METADATA ===
-Sent from: Walter Oriaro AI Leadership Portfolio
+        Sent from: Walter Oriaro Customer Success & Technical Architecture Portfolio
 IP Address: ${clientIp}
 Timestamp: ${new Date().toISOString()}
 User Agent: ${request.headers.get('user-agent') || 'Unknown'}
@@ -164,16 +164,16 @@ User Agent: ${request.headers.get('user-agent') || 'Unknown'}
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">
   <div style="background-color: white; padding: 30px; border-radius: 8px; border: 1px solid #e5e7eb;">
     <h2 style="color: #1f2937; margin-bottom: 20px; border-bottom: 2px solid #3b82f6; padding-bottom: 10px;">
-      ${priorityIndicator}${sanitizedData.isExecutiveInquiry ? '🎯 EXECUTIVE INQUIRY' : 'Professional Inquiry'} from AI Leadership Portfolio
+              ${priorityIndicator}${sanitizedData.isExecutiveInquiry ? '🎯 EXECUTIVE INQUIRY' : 'Professional Inquiry'} from Customer Success & Technical Architecture Portfolio
     </h2>
-    
-    ${sanitizedData.priority === 'critical' ? 
-      '<div style="background-color: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">⚡ CRITICAL PRIORITY - Immediate attention required</div>' : 
-      sanitizedData.priority === 'high' ? 
-      '<div style="background-color: #fef3c7; border: 1px solid #fbbf24; color: #92400e; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">⭐ HIGH PRIORITY - Expedited response needed</div>' : 
+
+    ${sanitizedData.priority === 'critical' ?
+      '<div style="background-color: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">⚡ CRITICAL PRIORITY - Immediate attention required</div>' :
+      sanitizedData.priority === 'high' ?
+      '<div style="background-color: #fef3c7; border: 1px solid #fbbf24; color: #92400e; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">⭐ HIGH PRIORITY - Expedited response needed</div>' :
       ''
     }
-    
+
     <div style="margin-bottom: 20px;">
       <h3 style="color: #374151; margin-bottom: 10px;">Contact Information</h3>
       <p style="margin: 5px 0;"><strong>Name:</strong> ${sanitizedData.name}</p>
@@ -182,7 +182,7 @@ User Agent: ${request.headers.get('user-agent') || 'Unknown'}
       <p style="margin: 5px 0;"><strong>Company:</strong> ${sanitizedData.company}</p>
       <p style="margin: 5px 0;"><strong>How they found me:</strong> ${sanitizedData.referralSource}</p>
     </div>
-    
+
     <div style="margin-bottom: 20px;">
       <h3 style="color: #374151; margin-bottom: 10px;">Inquiry Details</h3>
       <p style="margin: 5px 0;"><strong>Type:</strong> <span style="background-color: ${sanitizedData.isExecutiveInquiry ? '#dc2626' : '#3b82f6'}; color: white; padding: 4px 12px; border-radius: 6px; font-size: 14px; font-weight: bold;">${sanitizedData.inquiryType}</span></p>
@@ -191,14 +191,14 @@ User Agent: ${request.headers.get('user-agent') || 'Unknown'}
       <p style="margin: 5px 0;"><strong>Timeline:</strong> ${sanitizedData.timeline}</p>
       <p style="margin: 5px 0;"><strong>Budget:</strong> ${sanitizedData.budget}</p>
     </div>
-    
+
     <div style="margin-bottom: 20px;">
       <h3 style="color: #374151; margin-bottom: 10px;">Message</h3>
       <div style="background-color: #f3f4f6; padding: 15px; border-radius: 4px; border-left: 4px solid #3b82f6;">
         ${sanitizedData.message.replace(/\n/g, '<br>')}
       </div>
     </div>
-    
+
     <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
       <p>Sent from Walter Okumu Portfolio Contact Form</p>
       <p>Timestamp: ${new Date().toLocaleString()}</p>
@@ -229,7 +229,7 @@ User Agent: ${request.headers.get('user-agent') || 'Unknown'}
     };
 
     const responseTime = getResponseTime(sanitizedData.inquiryType, sanitizedData.urgency, sanitizedData.isExecutiveInquiry);
-    
+
     const autoReplyContent = `
 Dear ${sanitizedData.name},
 
@@ -237,8 +237,8 @@ Thank you for your ${sanitizedData.isExecutiveInquiry ? 'executive' : 'professio
 
 I have received your message and ${sanitizedData.priority === 'critical' ? 'will prioritize it for immediate review' : 'will review it carefully'}. Based on your inquiry type "${sanitizedData.inquiryType}" and urgency level, you can expect a response within ${responseTime}.
 
-${sanitizedData.isExecutiveInquiry ? 
-  'As this is flagged as an executive inquiry, it has been routed to my priority queue for expedited handling.' : 
+${sanitizedData.isExecutiveInquiry ?
+  'As this is flagged as an executive inquiry, it has been routed to my priority queue for expedited handling.' :
   'Your inquiry has been received and will be processed in my standard workflow.'
 }
 
@@ -248,14 +248,14 @@ ${sanitizedData.isExecutiveInquiry ?
 • Expected Response: Within ${responseTime}
 • Your Reference: #${Date.now().toString().slice(-6)}
 
-${sanitizedData.requiresImmedateResponse ? 
-  '⚡ URGENT: This inquiry has been flagged for immediate attention due to its critical nature.' : 
+${sanitizedData.requiresImmedateResponse ?
+  '⚡ URGENT: This inquiry has been flagged for immediate attention due to its critical nature.' :
   'I appreciate your interest and look forward to discussing how we can work together.'
 }
 
 Best regards,
 Walter Oriaro
-Chief AI Officer & International Technology Executive
+        Head of Customer Success & Technical Architecture
 
 ---
 This is an automated response. Please do not reply to this email.
@@ -266,18 +266,18 @@ For urgent matters, please mark your inquiry as "urgent" in the contact form.
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
   <div style="background-color: white; padding: 30px; border-radius: 8px; border: 1px solid #e5e7eb;">
     <h2 style="color: #1f2937; margin-bottom: 20px;">Thank You for Your Inquiry</h2>
-    
+
     <p style="color: #374151; line-height: 1.6;">Dear ${sanitizedData.name},</p>
-    
+
     <p style="color: #374151; line-height: 1.6;">
       Thank you for your professional inquiry regarding "<strong>${sanitizedData.subject}</strong>".
     </p>
-    
+
     <p style="color: #374151; line-height: 1.6;">
-      I have received your message and will review it carefully. Based on the inquiry type 
+      I have received your message and will review it carefully. Based on the inquiry type
       "<strong>${sanitizedData.inquiryType}</strong>", you can expect a response within:
     </p>
-    
+
     <div style="background-color: ${sanitizedData.isExecutiveInquiry ? '#fee2e2' : '#f0f9ff'}; border: 1px solid ${sanitizedData.isExecutiveInquiry ? '#fca5a5' : '#7dd3fc'}; border-radius: 8px; padding: 16px; margin: 20px 0;">
       <h4 style="color: ${sanitizedData.isExecutiveInquiry ? '#991b1b' : '#0c4a6e'}; margin: 0 0 10px 0; font-size: 16px;">
         ${sanitizedData.isExecutiveInquiry ? '🎯 Executive Priority Response' : '📬 Standard Response Timeline'}
@@ -289,21 +289,21 @@ For urgent matters, please mark your inquiry as "urgent" in the contact form.
         Reference: #${Date.now().toString().slice(-6)} | Priority: ${sanitizedData.priority.toUpperCase()}
       </p>
     </div>
-    
-    ${sanitizedData.requiresImmedateResponse ? 
-      '<div style="background-color: #fef2f2; border: 2px solid #ef4444; border-radius: 8px; padding: 16px; margin: 15px 0;"><p style="color: #dc2626; margin: 0; font-weight: bold; text-align: center;">⚡ URGENT INQUIRY - Immediate attention requested</p></div>' : 
+
+    ${sanitizedData.requiresImmedateResponse ?
+      '<div style="background-color: #fef2f2; border: 2px solid #ef4444; border-radius: 8px; padding: 16px; margin: 15px 0;"><p style="color: #dc2626; margin: 0; font-weight: bold; text-align: center;">⚡ URGENT INQUIRY - Immediate attention requested</p></div>' :
       ''
     }
-    
+
     <p style="color: #374151; line-height: 1.6;">
       I appreciate your interest and look forward to discussing how we can work together.
     </p>
-    
+
     <p style="color: #374151; line-height: 1.6;">
       Best regards,<br>
       <strong>Walter Okumu Oriaro</strong>
     </p>
-    
+
     <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
       <p>This is an automated response. Please do not reply to this email.</p>
     </div>
@@ -325,7 +325,7 @@ For urgent matters, please mark your inquiry as "urgent" in the contact form.
     }
 
     return NextResponse.json(
-      { 
+      {
         message: 'Message sent successfully!',
         inquiryType: sanitizedData.inquiryType
       },

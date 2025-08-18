@@ -1,5 +1,5 @@
 import Layout from '@/components/ui/Layout';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, MetricCard } from '@/components/ui/Card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import { SkillProgress, CircularProgress } from '@/components/ui/ProgressBar';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
@@ -10,12 +10,12 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Executive Skills Matrix - Walter Oriaro | AI Leadership & Technical Excellence',
-  description: 'Interactive skills portfolio showcasing Chief AI Officer capabilities: $2.3M revenue impact through ML implementation, international team leadership across 7 countries, and executive-level technical architecture expertise.',
-  keywords: 'Chief AI Officer Skills, Technical Leadership Matrix, International Team Management, AI Implementation, Executive Technology Skills, ML Operations',
+  title: 'Executive Skills Matrix - Walter Oriaro | Customer Success & Technical Architecture Leadership',
+  description: 'Interactive skills portfolio showcasing Head of Customer Success & Technical Architecture capabilities: 40% customer satisfaction improvement, international team leadership across 7 countries, and executive-level technical infrastructure expertise.',
+  keywords: 'Head of Customer Success Skills, Technical Architecture Leadership, International Team Management, Customer Success Strategy, Executive Technology Skills, Technical Infrastructure',
   openGraph: {
-    title: 'Walter Oriaro - Executive Skills Matrix | AI Leadership Excellence',
-    description: 'Interactive portfolio demonstrating $2.3M AI revenue impact and international technical leadership.',
+    title: 'Walter Oriaro - Executive Skills Matrix | Customer Success & Technical Architecture Excellence',
+    description: 'Interactive portfolio demonstrating 40% customer satisfaction improvement and international technical leadership.',
   }
 };
 
@@ -170,9 +170,9 @@ const businessSkills = [
 // Enhanced AI-focused skill metrics
 const skillMetrics = [
   {
-    value: '$2.3M',
-    label: 'AI Revenue Impact',
-    description: 'ML implementation results',
+    value: '40%',
+          label: 'Customer Satisfaction',
+      description: 'Customer success improvement',
     icon: '🤖'
   },
   {
@@ -183,7 +183,7 @@ const skillMetrics = [
   },
   {
     value: '92%',
-    label: 'Leadership Effectiveness', 
+    label: 'Leadership Effectiveness',
     description: '12 direct reports, 7 countries',
     icon: '👥'
   },
@@ -202,68 +202,86 @@ const skillMetrics = [
   {
     value: '6+',
     label: 'Years Experience',
-    description: 'Technical & AI leadership',
+            description: 'Technical & Customer Success leadership',
     icon: '⏱️'
   }
 ];
 
-// AI Leadership Skills (Enhanced)
+// Technical Leadership Skills (Corrected to match resume)
 const aiLeadershipSkills = [
   {
-    category: 'Chief AI Officer Strategy',
+    category: 'Customer Success Strategy',
     icon: Brain,
     level: 90,
     experience: '3+ years',
-    description: 'Developing enterprise AI transformation strategies with quantifiable business impact and international implementation.',
+    description: 'Developing enterprise customer success strategies with quantifiable business impact and international implementation.',
     achievements: [
-      '$2.3M revenue impact from AI initiatives',
-      'AI roadmap execution across 7 countries',
-      'C-level AI strategy presentations',
-      'Cross-functional AI team coordination (12 reports)'
+      '40% improvement in customer satisfaction metrics',
+      'Customer success roadmap execution across 7 countries',
+      'Executive customer success strategy presentations',
+      'Cross-functional customer success team coordination (12 reports)'
     ],
-    impact: 'Executive AI leadership positioning with measurable transformation results'
+    impact: 'Executive customer success leadership positioning with measurable transformation results'
   },
   {
-    category: 'ML Operations & Implementation',
+    category: 'Technical Infrastructure & Operations',
     icon: Cpu,
     level: 85,
     experience: '3+ years',
-    description: 'Implementing production ML systems with automated deployment, monitoring, and continuous improvement frameworks.',
+    description: 'Implementing production technical systems with automated deployment, monitoring, and continuous improvement frameworks.',
     achievements: [
-      '280% ML search performance improvement',
-      'Production ML model deployment automation',
-      'AI-powered customer success workflows',
-      'Predictive analytics implementation'
+      '78% deployment error reduction through CI/CD implementation',
+      'Production system deployment automation',
+      'Technical infrastructure optimization',
+      'Performance monitoring and improvement'
     ],
-    impact: 'Scalable ML operations supporting 5M+ monthly users with 99.7% uptime'
+    impact: 'Scalable technical operations supporting international operations with 99.8% uptime'
   }
 ];
 
-// Industry certifications and continuous learning
+// Industry certifications and continuous learning (Corrected to match resume)
 const certifications = [
   {
-    title: 'AWS Solutions Architect',
-    organization: 'Amazon Web Services',
-    status: 'In Progress',
-    category: 'Cloud Architecture'
-  },
-  {
-    title: 'Kubernetes Administrator',
-    organization: 'CNCF',
-    status: 'Planned',
-    category: 'DevOps'
-  },
-  {
-    title: 'Customer Success Management',
-    organization: 'Industry Certification',
+    title: 'Microverse React & Redux Module',
+    organization: 'Microverse',
     status: 'Completed',
-    category: 'Leadership'
+    category: 'Frontend Development'
   },
   {
-    title: 'Agile Project Management',
-    organization: 'PMI',
+    title: 'Microverse JavaScript Module',
+    organization: 'Microverse',
     status: 'Completed',
-    category: 'Management'
+    category: 'Programming'
+  },
+  {
+    title: 'Scientific Computing with Python',
+    organization: 'freeCodeCamp',
+    status: 'Completed',
+    category: 'Programming'
+  },
+  {
+    title: 'React (Basic)',
+    organization: 'HackerRank',
+    status: 'Completed',
+    category: 'Frontend Development'
+  },
+  {
+    title: 'JavaScript (Basic)',
+    organization: 'HackerRank',
+    status: 'Completed',
+    category: 'Programming'
+  },
+  {
+    title: 'Responsive Web Design',
+    organization: 'freeCodeCamp',
+    status: 'Completed',
+    category: 'Frontend Development'
+  },
+  {
+    title: 'Front-End Web UI Frameworks: Bootstrap 4',
+    organization: 'Coursera',
+    status: 'Completed',
+    category: 'Frontend Development'
   }
 ];
 
@@ -278,23 +296,23 @@ export default function Skills() {
               <div>
                 <Badge variant="executive" className="mb-4">
                   <Brain className="w-4 h-4 mr-2" />
-                  Chief AI Officer Skills Matrix
+                  Customer Success & Technical Architecture Skills Matrix
                 </Badge>
                 <h1 className="heading-display mb-6">
-                  AI-Driven Executive Excellence
-                  <span className="block text-color-success-600">$2.3M Revenue Impact Portfolio</span>
+                  Customer Success & Technical Excellence
+                  <span className="block text-color-success-600">40% Customer Satisfaction Improvement Portfolio</span>
                 </h1>
                 <p className="text-executive">
-                  Interactive skills showcase demonstrating Chief AI Officer capabilities:
-                  ML-powered business transformation, international team leadership across 7 countries,
-                  and technical architecture expertise driving measurable results.
+                  Interactive skills showcase demonstrating Head of Customer Success & Technical Architecture capabilities:
+                  Customer success strategy implementation, international team leadership across 7 countries,
+                  and technical infrastructure expertise driving measurable results.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="executive" size="lg" href="/contact">
                   <Target className="w-5 h-5 mr-2" />
-                  Chief AI Officer Consultation
+                  Customer Success Consultation
                 </Button>
                 <Button variant="glass" size="lg" href="/projects">
                   <BarChart3 className="w-5 h-5 mr-2" />
@@ -306,22 +324,22 @@ export default function Skills() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 {skillMetrics.slice(0, 4).map((metric, index) => (
-                  <MetricCard key={index} className="card-metric">
+                  <Card key={index} className="card-metric">
                     <div className="text-2xl mb-2">{metric.icon}</div>
                     <div className="metric-value text-xl">{metric.value}</div>
                     <div className="metric-label text-xs">{metric.label}</div>
                     <div className="metric-description text-xs">{metric.description}</div>
-                  </MetricCard>
+                  </Card>
                 ))}
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {skillMetrics.slice(4).map((metric, index) => (
-                  <MetricCard key={index + 4} className="card-metric">
+                  <Card key={index + 4} className="card-metric">
                     <div className="text-2xl mb-2">{metric.icon}</div>
                     <div className="metric-value text-xl">{metric.value}</div>
                     <div className="metric-label text-xs">{metric.label}</div>
                     <div className="metric-description text-xs">{metric.description}</div>
-                  </MetricCard>
+                  </Card>
                 ))}
               </div>
             </div>
@@ -364,7 +382,7 @@ export default function Skills() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <CircularProgress value={skill.level} size="lg" />
+                      <CircularProgress value={skill.level} size={120} />
                       <div className="text-xs text-color-neutral-600 mt-1">{skill.level}%</div>
                     </div>
                   </div>
@@ -414,7 +432,10 @@ export default function Skills() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="w-12 h-12 rounded-full bg-gradient-executive flex items-center justify-center text-white">
-                        <skill.icon className="w-6 h-6" />
+                        {(() => {
+                          const IconComponent = skill.icon;
+                          return <IconComponent className="w-6 h-6" />;
+                        })()}
                       </div>
                       <div>
                         <CardTitle className="text-lg">{skill.category}</CardTitle>
@@ -422,7 +443,7 @@ export default function Skills() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <CircularProgress value={skill.level} size="lg" />
+                      <CircularProgress value={skill.level} size={120} />
                     </div>
                   </div>
                   <CardDescription>{skill.description}</CardDescription>
@@ -464,7 +485,10 @@ export default function Skills() {
                   <Card className="card-glass p-8">
                     <div className="flex items-center space-x-4 mb-6">
                       <div className="w-16 h-16 rounded-full bg-gradient-executive flex items-center justify-center text-white">
-                        <category.icon className="w-8 h-8" />
+                        {(() => {
+                          const IconComponent = category.icon;
+                          return <IconComponent className="w-8 h-8" />;
+                        })()}
                       </div>
                       <div>
                         <h3 className="heading-secondary">{category.category}</h3>
@@ -472,7 +496,7 @@ export default function Skills() {
                           <Badge variant="executive">{category.experience}</Badge>
                           <div className="flex items-center space-x-2">
                             <span className="text-sm text-color-neutral-600">Proficiency:</span>
-                            <CircularProgress value={category.level} size="sm" />
+                            <CircularProgress value={category.level} size={60} />
                           </div>
                         </div>
                       </div>
@@ -522,14 +546,17 @@ export default function Skills() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-full bg-gradient-executive flex items-center justify-center text-white">
-                        <skill.icon className="w-5 h-5" />
+                        {(() => {
+                          const IconComponent = skill.icon;
+                          return <IconComponent className="w-5 h-5" />;
+                        })()}
                       </div>
                       <div>
                         <CardTitle className="text-lg">{skill.category}</CardTitle>
                         <Badge variant="outline" className="text-xs">{skill.experience}</Badge>
                       </div>
                     </div>
-                    <CircularProgress value={skill.level} size="md" />
+                    <CircularProgress value={skill.level} size={80} />
                   </div>
                   <CardDescription>{skill.description}</CardDescription>
                 </CardHeader>

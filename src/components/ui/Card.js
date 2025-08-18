@@ -1,375 +1,205 @@
 'use client';
 
 import { forwardRef } from 'react';
-import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 /**
- * Advanced Card System - Executive Portfolio Design
- * Implements sophisticated visual hierarchy with glass morphism and executive styling
+ * Enhanced Card Component - International Standards
+ * Sophisticated design with glass morphism, gradients, and animations
  */
-
-// Base Card Component with Enhanced Design System
 const Card = forwardRef(({
+  className,
+  variant = "default",
+  size = "default",
   children,
-  className = '',
-  variant = 'executive',
-  padding = 'lg',
-  interactive = false,
+  hover = true,
+  animation = "default",
+  glass = false,
+  gradient = false,
+  border = true,
+  shadow = "default",
+  rounded = "default",
   ...props
 }, ref) => {
-  const baseClasses = 'card-base';
-
-  const variantClasses = {
-    executive: 'card-executive',
-    glass: 'card-glass',
-    standard: 'border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900'
+  // Enhanced card variants
+  const cardVariants = {
+    default: "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700",
+    elevated: "bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 shadow-lg",
+    outlined: "bg-transparent border-2 border-gray-200 dark:border-gray-700",
+    filled: "bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700",
+    glass: "bg-white/10 backdrop-blur-xl border-white/20",
+    gradient: "bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 border-blue-200 dark:border-blue-800"
   };
 
-  const paddingClasses = {
-    none: '',
-    sm: 'p-sm',
-    md: 'p-md',
-    lg: 'p-lg',
-    xl: 'p-xl'
+  // Enhanced size variants
+  const sizeVariants = {
+    sm: "p-4",
+    default: "p-6",
+    lg: "p-8",
+    xl: "p-10",
+    "2xl": "p-12"
   };
 
-  const interactiveClasses = interactive ? 'interactive-element magnetic-element cursor-pointer' : '';
-
-  return (
-    <div
-      ref={ref}
-      className={cn([
-        baseClasses,
-        variantClasses[variant],
-        paddingClasses[padding],
-        interactiveClasses,
-        className
-      ])}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-});
-
-// Card Header Component
-const CardHeader = forwardRef(({
-  children,
-  className = '',
-  ...props
-}, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(['space-y-xs mb-md', className])}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-});
-
-// Card Title Component
-const CardTitle = forwardRef(({
-  children,
-  className = '',
-  level = 'secondary',
-  ...props
-}, ref) => {
-  const levelClasses = {
-    primary: 'heading-primary',
-    secondary: 'heading-secondary',
-    tertiary: 'text-xl font-semibold'
+  // Enhanced shadow variants
+  const shadowVariants = {
+    none: "",
+    sm: "shadow-sm",
+    default: "shadow-md",
+    lg: "shadow-lg",
+    xl: "shadow-xl",
+    "2xl": "shadow-2xl",
+    glow: "shadow-glow"
   };
 
-  return (
-    <h3
-      ref={ref}
-      className={cn([levelClasses[level], 'mb-0', className])}
-      {...props}
-    >
-      {children}
-    </h3>
-  );
-});
-
-// Card Description Component
-const CardDescription = forwardRef(({
-  children,
-  className = '',
-  ...props
-}, ref) => {
-  return (
-    <p
-      ref={ref}
-      className={cn(['text-tertiary-on-light text-sm leading-relaxed', className])}
-      {...props}
-    >
-      {children}
-    </p>
-  );
-});
-
-// Card Content Component
-const CardContent = forwardRef(({
-  children,
-  className = '',
-  ...props
-}, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(['space-y-component', className])}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-});
-
-// Card Footer Component
-const CardFooter = forwardRef(({
-  children,
-  className = '',
-  ...props
-}, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(['flex items-center justify-between mt-lg pt-md border-t border-neutral-200 dark:border-neutral-700', className])}
-      {...props}
-    >
-      {children}
-    </div>
-  );
-});
-
-// Advanced Metric Card with Data Visualization
-const MetricCard = forwardRef(({
-  value,
-  label,
-  description,
-  icon,
-  iconAlt,
-  change,
-  trend = 'neutral',
-  className = '',
-  variant = 'executive',
-  ...props
-}, ref) => {
-  const trendColors = {
-    positive: 'text-success-600 dark:text-success-400',
-    negative: 'text-error-600 dark:text-error-400',
-    neutral: 'text-neutral-500 dark:text-neutral-400',
+  // Enhanced rounded variants
+  const roundedVariants = {
+    none: "rounded-none",
+    sm: "rounded-md",
+    default: "rounded-lg",
+    lg: "rounded-xl",
+    xl: "rounded-2xl",
+    "3xl": "rounded-3xl",
+    full: "rounded-full"
   };
 
+  // Enhanced animation variants
+  const animationVariants = {
+    none: {},
+    default: {
+      whileHover: hover ? { y: -4, scale: 1.01 } : {},
+      whileTap: { scale: 0.98 }
+    },
+    lift: {
+      whileHover: hover ? { y: -8, scale: 1.02 } : {},
+      whileTap: { scale: 0.96 }
+    },
+    scale: {
+      whileHover: hover ? { scale: 1.05 } : {},
+      whileTap: { scale: 0.95 }
+    },
+    rotate: {
+      whileHover: hover ? { rotate: 2, scale: 1.02 } : {},
+      whileTap: { rotate: -2, scale: 0.98 }
+    }
+  };
+
+  const baseClasses = cn(
+    "relative overflow-hidden transition-all duration-300",
+    cardVariants[variant],
+    sizeVariants[size],
+    shadowVariants[shadow],
+    roundedVariants[rounded],
+    border && "border",
+    glass && "backdrop-blur-xl bg-white/10 border-white/20",
+    gradient && "bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900",
+    className
+  );
+
   return (
-    <Card
+    <motion.div
       ref={ref}
-      variant={variant}
-      padding="lg"
-      className={cn('card-metric text-center min-h-[180px] flex flex-col justify-center', className)}
+      className={baseClasses}
+      variants={animationVariants[animation]}
+      initial="initial"
+      whileHover="whileHover"
+      whileTap="whileTap"
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
       {...props}
     >
-      {/* Icon with Enhanced Styling */}
-      {icon && (
-        <div className="flex justify-center mb-md">
-          <div
-            className="w-12 h-12 flex items-center justify-center text-2xl bg-primary-50 dark:bg-primary-900/30 rounded-xl shadow-sm"
-            role="img"
-            aria-label={iconAlt || `${label} icon`}
-          >
-            {typeof icon === 'string' ? icon : icon}
-          </div>
-        </div>
+      {/* Enhanced background effects */}
+      {glass && (
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 dark:from-black/20 dark:to-black/5" />
       )}
 
-      {/* Metric Value */}
-      <div className="metric-value text-5xl font-black leading-none mb-sm">
-        {value}
+      {gradient && (
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-transparent to-indigo-100/50 dark:from-blue-900/50 dark:to-indigo-900/50" />
+      )}
+
+      {/* Content with proper z-index */}
+      <div className="relative z-10">
+        {children}
       </div>
 
-      {/* Metric Label */}
-      <div className="metric-label text-sm font-bold mb-xs">
-        {label}
-      </div>
-
-      {/* Description */}
-      {description && (
-        <div className="metric-description text-xs leading-relaxed mb-sm">
-          {description}
-        </div>
+      {/* Enhanced hover overlay */}
+      {hover && (
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
       )}
-
-      {/* Change Indicator */}
-      {change && (
-        <div className={cn('text-xs font-semibold', trendColors[trend])}>
-          {change}
-        </div>
-      )}
-    </Card>
+    </motion.div>
   );
 });
 
-// Project Card Component for Portfolio
-const ProjectCard = forwardRef(({
-  project,
-  className = '',
-  onClick,
-  ...props
-}, ref) => {
-  const {
-    title,
-    description,
-    image,
-    technologies = [],
-    status,
-    impact,
-    category
-  } = project;
+/**
+ * Enhanced Card Header Component
+ */
+const CardHeader = forwardRef(({ className, children, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 pb-4", className)}
+    {...props}
+  >
+    {children}
+  </div>
+));
 
-  return (
-    <Card
-      ref={ref}
-      variant="glass"
-      padding="xl"
-      interactive={!!onClick}
-      className={cn('group relative overflow-hidden', className)}
-      onClick={onClick}
-      {...props}
-    >
-      {/* Status Indicator */}
-      {status && (
-        <div className="absolute top-md right-md">
-          <span className={cn([
-            'px-xs py-2xs text-xs font-medium rounded-full',
-            status === 'active' && 'bg-success-100 text-success-800 dark:bg-success-900/30 dark:text-success-300',
-            status === 'completed' && 'bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300',
-            status === 'in-progress' && 'bg-warning-100 text-warning-800 dark:bg-warning-900/30 dark:text-warning-300'
-          ])}>
-            {status}
-          </span>
-        </div>
-      )}
+/**
+ * Enhanced Card Title Component
+ */
+const CardTitle = forwardRef(({ className, children, ...props }, ref) => (
+  <h3
+    ref={ref}
+    className={cn("text-2xl font-semibold leading-none tracking-tight text-gray-900 dark:text-white", className)}
+    {...props}
+  >
+    {children}
+  </h3>
+));
 
-      {/* Project Image */}
-      {image && (
-        <div className="mb-lg rounded-lg overflow-hidden relative h-48">
-          <Image
-            src={image}
-            alt={`${title} project screenshot`}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </div>
-      )}
+/**
+ * Enhanced Card Description Component
+ */
+const CardDescription = forwardRef(({ className, children, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-sm text-gray-600 dark:text-gray-400", className)}
+    {...props}
+  >
+    {children}
+  </p>
+));
 
-      {/* Project Content */}
-      <CardHeader>
-        <CardTitle level="tertiary">{title}</CardTitle>
-        {category && (
-          <div className="text-xs text-primary-600 dark:text-primary-400 font-medium uppercase tracking-wider">
-            {category}
-          </div>
-        )}
-      </CardHeader>
+/**
+ * Enhanced Card Content Component
+ */
+const CardContent = forwardRef(({ className, children, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("pt-0", className)}
+    {...props}
+  >
+    {children}
+  </div>
+));
 
-      <CardContent>
-        <p className="text-sm text-tertiary-on-light leading-relaxed mb-md">
-          {description}
-        </p>
+/**
+ * Enhanced Card Footer Component
+ */
+const CardFooter = forwardRef(({ className, children, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center pt-4", className)}
+    {...props}
+  >
+    {children}
+  </div>
+));
 
-        {/* Impact Metrics */}
-        {impact && (
-          <div className="mb-md">
-            <h4 className="text-xs font-semibold text-secondary-on-light mb-xs uppercase tracking-wider">Impact</h4>
-            <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
-              {impact}
-            </p>
-          </div>
-        )}
+Card.displayName = "Card";
+CardHeader.displayName = "CardHeader";
+CardTitle.displayName = "CardTitle";
+CardDescription.displayName = "CardDescription";
+CardContent.displayName = "CardContent";
+CardFooter.displayName = "CardFooter";
 
-        {/* Technologies */}
-        {technologies.length > 0 && (
-          <div>
-            <h4 className="text-xs font-semibold text-secondary-on-light mb-xs uppercase tracking-wider">Technologies</h4>
-            <div className="flex flex-wrap gap-xs">
-              {technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-xs py-2xs bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded text-xs font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  );
-});
-
-// Feature Card for Marketing Sections
-const FeatureCard = forwardRef(({
-  icon,
-  title,
-  description,
-  className = '',
-  ...props
-}, ref) => {
-  return (
-    <Card
-      ref={ref}
-      variant="glass"
-      padding="lg"
-      className={cn('text-center group', className)}
-      {...props}
-    >
-      {/* Feature Icon */}
-      <div className="flex justify-center mb-lg">
-        <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
-          {icon}
-        </div>
-      </div>
-
-      {/* Feature Content */}
-      <CardHeader>
-        <CardTitle level="tertiary">{title}</CardTitle>
-      </CardHeader>
-
-      <CardContent>
-        <p className="text-sm text-tertiary-on-light leading-relaxed">
-          {description}
-        </p>
-      </CardContent>
-    </Card>
-  );
-});
-
-// Set display names for debugging
-Card.displayName = 'Card';
-CardHeader.displayName = 'CardHeader';
-CardTitle.displayName = 'CardTitle';
-CardDescription.displayName = 'CardDescription';
-CardContent.displayName = 'CardContent';
-CardFooter.displayName = 'CardFooter';
-MetricCard.displayName = 'MetricCard';
-ProjectCard.displayName = 'ProjectCard';
-FeatureCard.displayName = 'FeatureCard';
-
-export {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-  MetricCard,
-  ProjectCard,
-  FeatureCard,
-};
-
+export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };
 export default Card;

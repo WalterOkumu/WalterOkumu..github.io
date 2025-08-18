@@ -20,6 +20,11 @@ const TimelineItem = forwardRef(({
   technologies = [],
   isLast = false,
   className = '',
+  // Filter out non-DOM props
+  executiveLevel,
+  revenueImpact,
+  teamSize,
+  countries,
   ...props
 }, ref) => {
   return (
@@ -32,7 +37,7 @@ const TimelineItem = forwardRef(({
       <div className="absolute -left-[9px] top-0">
         <div className="w-4 h-4 bg-primary-600 rounded-full border-4 border-neutral-50 dark:border-neutral-950"></div>
       </div>
-      
+
       {/* Content */}
       <div className="ml-8">
         {/* Header */}
@@ -58,7 +63,7 @@ const TimelineItem = forwardRef(({
             )}
           </div>
         </div>
-        
+
         {/* Description */}
         {description && (
           <div className="text-neutral-700 dark:text-neutral-300 mb-4">
@@ -73,7 +78,7 @@ const TimelineItem = forwardRef(({
             )}
           </div>
         )}
-        
+
         {/* Achievements */}
         {achievements.length > 0 && (
           <div className="mb-4">
@@ -87,7 +92,7 @@ const TimelineItem = forwardRef(({
             </ul>
           </div>
         )}
-        
+
         {/* Technologies */}
         {technologies.length > 0 && (
           <div className="flex flex-wrap gap-2">

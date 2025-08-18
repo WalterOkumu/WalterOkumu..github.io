@@ -1,17 +1,17 @@
 import Layout from '@/components/ui/Layout';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, MetricCard } from '@/components/ui/Card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import ProjectsClient from './projects-client';
 import { Users, Globe, Zap, ExternalLink, Calendar, MapPin, TrendingUp, Award, Target } from 'lucide-react';
 
 export const metadata = {
-  title: 'Executive Portfolio - Walter Oriaro | AI-Driven International Projects',
-  description: 'Chief AI Officer portfolio: $2.3M revenue impact across 7 countries through ML-driven Yellow Pages transformation, international team leadership, and AI-powered customer success platforms. C-level technology execution with measurable business outcomes.',
-  keywords: 'Chief AI Officer Projects, International Technology Leadership, ML Implementation, Revenue Impact, Team Scaling, AI Transformation',
+  title: 'Executive Portfolio - Walter Oriaro | Customer Success & Technical Architecture Projects',
+  description: 'Head of Customer Success & Technical Architecture portfolio: 40% customer satisfaction improvement across 7 countries through technical transformation, international team leadership, and customer success platform optimization. Executive technology execution with measurable business outcomes.',
+  keywords: 'Head of Customer Success Projects, International Technology Leadership, Technical Architecture, Customer Success, Revenue Impact, Team Scaling, Technical Transformation',
   openGraph: {
-    title: 'Walter Oriaro - Executive Project Portfolio | AI Leadership Results',
-    description: 'Leading $2.3M revenue-generating AI transformation across 7 countries with international team management.',
+    title: 'Walter Oriaro - Executive Project Portfolio | Customer Success & Technical Leadership Results',
+    description: 'Leading customer success transformation across 7 countries with international team management and technical infrastructure optimization.',
   }
 };
 
@@ -30,7 +30,7 @@ const yellowPagesPortfolio = [
     year: '2023-Present',
     featured: true,
     challenge: 'Transform legacy Yellow Pages directory into modern digital platform serving 50M+ Kenyan market while managing distributed team across 3 time zones.',
-    solution: 'Architected React.js/Next.js platform with microservices backend, implemented AI-powered search, deployed scalable AWS infrastructure, established agile development workflows.',
+    solution: 'Architected React.js/Next.js platform with microservices backend, implemented advanced search optimization, deployed scalable AWS infrastructure, established agile development workflows.',
     results: [
       '350% increase in user engagement metrics',
       '50K+ active business listings migrated',
@@ -45,7 +45,7 @@ const yellowPagesPortfolio = [
       { label: 'User Growth', value: '350%' }
     ],
     timeline: '2023 - Present',
-    aiImpact: 'ML-powered search algorithms increased listing discovery by 280%'
+    technicalImpact: 'Advanced search optimization increased listing discovery by 280%'
   },
   {
     id: 'yellowpages-tanzania',
@@ -75,7 +75,7 @@ const yellowPagesPortfolio = [
       { label: 'Inquiry Growth', value: '65%' }
     ],
     timeline: '2023 - Present',
-    aiImpact: 'Localized AI search with Swahili language processing capability'
+    technicalImpact: 'Localized search optimization with Swahili language processing capability'
   },
   {
     id: 'yellowpages-mozambique',
@@ -157,99 +157,12 @@ const yellowPagesPortfolio = [
 
 // Enhanced Tourism Portfolio with Analytics
 const tourismPortfolio = [
-  {
-    id: 'kenya-guide',
-    title: 'Visit Kenya Guide',
-    description: 'Comprehensive tourism guide showcasing Kenya\'s attractions, accommodations, and travel planning resources.',
-    url: 'https://visitkenyaguide.com',
-    category: 'Tourism Guide',
-    technologies: ['WordPress', 'SEO Optimization', 'Content Management'],
-    role: 'Full-Stack Development & SEO',
-    impact: '100K+ monthly visitors',
-    year: '2020-2022',
-    challenge: 'Develop comprehensive digital tourism platform for Kenya targeting international visitors with rich content, booking capabilities, and search optimization.',
-    solution: 'Built WordPress platform with custom theme, integrated booking systems, implemented advanced SEO strategy, created content management workflows, optimized for Core Web Vitals.',
-    results: [
-      '100K+ monthly organic visitors achieved',
-      'First page Google rankings for 200+ tourism keywords',
-      '85% increase in tourism inquiry conversions',
-      '2.5 minute average session duration',
-      'Mobile-first responsive design implementation'
-    ],
-    metrics: [
-      { label: 'Monthly Visitors', value: '100K+' },
-      { label: 'SEO Keywords', value: '200+' },
-      { label: 'Conversion Rate', value: '85%' },
-      { label: 'Session Duration', value: '2.5min' }
-    ],
-    timeline: '2020 - 2022'
-  },
-  {
-    id: 'tanzania-guide',
-    title: 'Visit Tanzania Guide',
-    description: 'Tourism platform promoting Tanzania\'s national parks, cultural sites, and adventure tourism opportunities.',
-    url: 'https://visittanzaniaguide.com',
-    category: 'Tourism Guide',
-    technologies: ['WordPress', 'Tourism Integration', 'Mobile Optimization'],
-    role: 'Platform Development',
-    impact: '80K+ monthly visitors',
-    year: '2020-2022'
-  },
-  {
-    id: 'uganda-guide',
-    title: 'Visit Uganda Guide',
-    description: 'Comprehensive travel guide featuring Uganda\'s wildlife, cultural experiences, and tourism infrastructure.',
-    url: 'https://visitugandaguide.com',
-    category: 'Tourism Guide',
-    technologies: ['WordPress', 'Wildlife Integration', 'Cultural Content'],
-    role: 'Content & Technical Development',
-    impact: '60K+ monthly visitors',
-    year: '2020-2022'
-  },
-  {
-    id: 'rwanda-guide',
-    title: 'Visit Rwanda Guide',
-    description: 'Tourism platform highlighting Rwanda\'s gorilla trekking, cultural heritage, and sustainable tourism initiatives.',
-    url: 'https://visitrwandaguide.com',
-    category: 'Tourism Guide',
-    technologies: ['WordPress', 'Sustainability Features', 'Booking Integration'],
-    role: 'Sustainable Tourism Platform',
-    impact: '45K+ monthly visitors',
-    year: '2020-2022'
-  }
+
 ];
 
 // Client Projects
 const clientProjects = [
-  {
-    id: 'rhodium-digital',
-    title: 'Rhodium Digital',
-    description: 'Corporate website and digital marketing platform for international tourism marketing company specializing in East African destinations.',
-    url: 'https://rhodiumdigital.com',
-    category: 'Corporate Website',
-    technologies: ['WordPress', 'Digital Marketing', 'SEO', 'Analytics'],
-    role: 'Full-Stack Development & Digital Marketing',
-    impact: 'Improved lead generation by 35%',
-    year: '2020-2022',
-    featured: true,
-    challenge: 'Create professional corporate website for international tourism marketing company requiring lead generation optimization, portfolio showcase, and multi-market targeting.',
-    solution: 'Developed custom WordPress platform with lead capture optimization, integrated analytics tracking, implemented conversion-focused design, created portfolio management system.',
-    results: [
-      '35% improvement in qualified lead generation',
-      'Professional brand identity established',
-      'Multi-market content strategy implemented',
-      'Analytics-driven optimization achieved',
-      'Mobile conversion rate: 25% improvement'
-    ],
-    metrics: [
-      { label: 'Lead Generation', value: '+35%' },
-      { label: 'Mobile Conversion', value: '+25%' },
-      { label: 'Page Speed Score', value: '92' },
-      { label: 'SEO Visibility', value: '+180%' }
-    ],
-    timeline: '2020 - 2022',
-    aiImpact: 'Implemented content personalization based on visitor geography and behavior'
-  },
+
   {
     id: 'kua-wellness',
     title: 'Kua Wellness Africa',
@@ -277,16 +190,16 @@ const clientProjects = [
       { label: 'System Uptime', value: '99.5%' }
     ],
     timeline: '2023 - Present',
-    aiImpact: 'AI-powered service recommendations based on client wellness profiles'
+    technicalImpact: 'Service recommendations based on client wellness profiles'
   }
 ];
 
-// Enhanced Portfolio metrics with AI Impact
+// Enhanced Portfolio metrics with Technical Impact
 const portfolioMetrics = [
   {
-    value: '$2.3M',
-    label: 'Revenue Impact',
-    description: 'AI-driven transformation results',
+    value: '40%',
+    label: 'Customer Satisfaction',
+    description: 'Technical transformation results',
     icon: '💰'
   },
   {
@@ -325,7 +238,7 @@ const portfolioMetrics = [
 const projectCategories = [
   'All Projects',
   'Business Directory',
-  'Tourism Guide', 
+  'Tourism Guide',
   'Wellness & Health',
   'Corporate Website'
 ];
@@ -348,15 +261,15 @@ export default function Projects() {
               <div>
                 <Badge variant="executive" className="mb-4">
                   <Award className="w-4 h-4 mr-2" />
-                  Chief AI Officer Portfolio
+                  Customer Success & Technical Architecture Portfolio
                 </Badge>
                 <h1 className="heading-display mb-6">
                   International Digital Portfolio
-                  <span className="block text-secondary">$2.3M Revenue Impact Across 7 Countries</span>
+                  <span className="block text-secondary">40% Customer Satisfaction Improvement Across 7 Countries</span>
                 </h1>
                 <p className="text-executive">
-                  Leading AI-driven technical architecture and international team management for 
-                  digital properties spanning business directories, tourism platforms, and custom 
+                  Leading customer success operations and technical architecture for
+                  digital properties spanning business directories, tourism platforms, and custom
                   enterprise solutions. Managing 12 direct reports with measurable business outcomes.
                 </p>
               </div>
@@ -376,20 +289,20 @@ export default function Projects() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 {portfolioMetrics.slice(0, 4).map((metric, index) => (
-                  <MetricCard key={index} className="card-metric">
+                  <Card key={index} className="card-metric">
                     <div className="text-2xl mb-2">{metric.icon}</div>
                     <div className="metric-value text-2xl">{metric.value}</div>
                     <div className="metric-label text-xs">{metric.label}</div>
-                  </MetricCard>
+                  </Card>
                 ))}
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {portfolioMetrics.slice(4).map((metric, index) => (
-                  <MetricCard key={index + 4} className="card-metric">
+                  <Card key={index + 4} className="card-metric">
                     <div className="text-2xl mb-2">{metric.icon}</div>
                     <div className="metric-value text-2xl">{metric.value}</div>
                     <div className="metric-label text-xs">{metric.label}</div>
-                  </MetricCard>
+                  </Card>
                 ))}
               </div>
             </div>
@@ -400,17 +313,17 @@ export default function Projects() {
       {/* Interactive Project Showcase */}
       <ProjectsClient projects={allProjects} categories={projectCategories} />
 
-      {/* AI Leadership Impact Section */}
+      {/* Technical Leadership Impact Section */}
       <section className="section-fullwidth section-executive">
         <div className="container">
           <div className="text-center mb-16">
             <Badge variant="executive" className="mb-4">
               <TrendingUp className="w-4 h-4 mr-2" />
-              AI Transformation Results
+              Technical Transformation Results
             </Badge>
-            <h2 className="heading-primary mb-4">Measurable AI Leadership Impact</h2>
+            <h2 className="heading-primary mb-4">Measurable Technical Leadership Impact</h2>
             <p className="text-executive mx-auto">
-              Quantifiable results from AI-driven technical architecture and international 
+              Quantifiable results from technical architecture and international
               team leadership across digital transformation initiatives.
             </p>
           </div>
@@ -421,8 +334,8 @@ export default function Projects() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between p-4 bg-color-success-50 rounded-lg">
                   <div>
-                    <div className="text-2xl font-bold text-color-success-700">$2.3M</div>
-                    <div className="text-sm text-color-success-600">Revenue Impact from AI Implementation</div>
+                    <div className="text-2xl font-bold text-color-success-700">23%</div>
+                    <div className="text-sm text-color-success-600">Upsell Revenue Growth</div>
                   </div>
                   <div className="text-color-success-500">
                     <TrendingUp className="w-8 h-8" />
